@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Leave Dashboard | Omnino Solutions</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+
+    <style>
+        .card-header-custom {
+            background-color: #F0F2F6;
+            /* Light gray background */
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0;
+            border-bottom: 1px solid #D9DEE3;
+            /* Light border */
+            border-radius: 0.375rem 0.375rem 0 0;
+        }
+
+        .table-header-orange th {
+            /* background-color: #FFD700 !important; */
+            /* Orange-yellow for table headers */
+            color: #323232;
+            /* Dark text for contrast */
+        }
+
+        /* DataTables pagination active button styling - removed specific background/border to allow default gray for "1" when only one page exists */
+        .dataTables_paginate .pagination .paginate_button.current {
+            color: #323232 !important;
+            /* Ensure text color is dark */
+            /* DataTables will handle the background/border for disabled states */
+        }
+
+        /* DataTables search input and length select styling */
+        div.dataTables_wrapper div.dataTables_filter label,
+        div.dataTables_wrapper div.dataTables_length label {
+            display: flex;
+            align-items: center;
+        }
+
+        div.dataTables_wrapper div.dataTables_filter input {
+            margin-left: 0.5rem;
+            display: inline-block;
+            width: auto;
+        }
+
+        div.dataTables_wrapper div.dataTables_length select {
+            margin-right: 0.5rem;
+        }
+
+        .btn-primary-custom {
+            background-color: #007bff;
+            /* Blue for the button */
+            border-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .dataTables_wrapper::after {
+            content: "";
+            display: table;
+            clear: both;
+            /* Clear floats to prevent layout issues */
+        }
+
+
+        /* Specific styling for the custom search input for "LEAVE REQUEST LIST" */
+        #customSearchInput {
+            width: 250px;
+            /* Adjust width as needed */
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #697a8d;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #d9dee3;
+            border-radius: 0.375rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            margin-bottom: 1rem;
+            /* Space below the search box */
+            margin-left: 1.5rem;
+            /* Align with card body padding */
+        }
+
+        #customSearchInput:focus {
+            color: #697a8d;
+            background-color: #fff;
+            border-color: #88b0dd;
+            outline: 0;
+            box-shadow: 0 0.125rem 0.25rem rgba(105, 122, 141, 0.075);
+        }
+
+        /* Adjusting the default DataTables elements that we hide or reposition */
+        /* These should apply to the _wrapper for tables where we custom control search/length */
+        #leaveRequestListTable_wrapper .dataTables_filter,
+        #leaveRequestListTable_wrapper .dataTables_length,
+        #leaveStatusTable_wrapper .dataTables_filter,
+        #leaveStatusTable_wrapper .dataTables_length {
+            display: none;
+            /* Hide default DataTables search and length */
+        }
+
+        /* Ensure current dropdown is tight with the heading */
+        .card-header-custom .d-flex .col-sm-3 {
+            flex-grow: 0;
+            /* Prevent it from taking extra space */
+            flex-shrink: 0;
+            width: auto;
+            /* Allow it to size based on content */
+            margin-left: 10px;
+            /* Small margin from the heading if desired */
+        }
+
+        .card-header-custom .d-flex {
+            align-items: center;
+        }
+
+        /* Style for disabled pagination buttons to ensure they are gray */
+        .dataTables_paginate .paginate_button.disabled {
+            color: #6c757d !important;
+            /* Gray color for disabled buttons */
+            background-color: transparent !important;
+            border-color: transparent !important;
+            cursor: default;
+        }
+
+        /* Styling for the numeric pagination button when it's the current one, but only if it's disabled (i.e., only one page) */
+        .dataTables_paginate .pagination .paginate_button.current.disabled {
+            background-color: transparent !important;
+            border-color: transparent !important;
+            color: #6c757d !important;
+            /* Gray color for the number "1" when disabled */
+        }
+
+        /* New styles for positioning info and pagination outside card body but within a structured div */
+        .datatables-footer-container {
+            padding: 1.25rem 1.5rem;
+            /* Match card-body padding */
+            border-top: 1px solid #D9DEE3;
+            /* Separator line */
+            border-radius: 0 0 0.375rem 0.375rem;
+            /* Rounded corners for the bottom */
+            background-color: #fff;
+            /* Ensure it has a background */
+        }
+
+        /* Adjust card-body border-radius if it has a footer */
+        .card-body {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        /* DataTables sorting icons for Bootstrap 5 */
+        table.dataTable thead>tr>th.sorting,
+        table.dataTable thead>tr>th.sorting_asc,
+        table.dataTable thead>tr>th.sorting_desc,
+        table.dataTable thead>tr>th.sorting_asc_disabled,
+        table.dataTable thead>tr>th.sorting_desc_disabled {
+            cursor: pointer;
+            position: relative;
+            padding-right: 26px !important;
+            /* Make space for the icon */
+        }
+
+        table.dataTable thead>tr>th.sorting:before,
+        table.dataTable thead>tr>th.sorting:after,
+        table.dataTable thead>tr>th.sorting_asc:before,
+        table.dataTable thead>tr>th.sorting_asc:after,
+        table.dataTable thead>tr>th.sorting_desc:before,
+        table.dataTable thead>tr>th.sorting_desc:after,
+        table.dataTable thead>tr>th.sorting_asc_disabled:before,
+        table.dataTable thead>tr>th.sorting_asc_disabled:after,
+        table.dataTable thead>tr>th.sorting_desc_disabled:before,
+        table.dataTable thead>tr>th.sorting_desc_disabled:after {
+            position: absolute;
+            bottom: 0.9em;
+            display: block;
+            opacity: 0.3;
+            /* Default opacity for unsorted icons */
+            font-size: 0.7em;
+            line-height: 9px;
+            right: 10px;
+            font-family: 'Boxicons' !important;
+            /* Use Boxicons */
+        }
+
+        table.dataTable thead>tr>th.sorting:before,
+        table.dataTable thead>tr>th.sorting_asc:before,
+        table.dataTable thead>tr>th.sorting_desc:before,
+        table.dataTable thead>tr>th.sorting_asc_disabled:before,
+        table.dataTable thead>tr>th.sorting_desc_disabled:before {
+            content: '\eb84';
+            /* bx-chevron-up */
+            bottom: 1.2em;
+        }
+
+        table.dataTable thead>tr>th.sorting:after,
+        table.dataTable thead>tr>th.sorting_asc:after,
+        table.dataTable thead>tr>th.sorting_desc:after,
+        table.dataTable thead>tr>th.sorting_asc_disabled:after,
+        table.dataTable thead>tr>th.sorting_desc_disabled:after {
+            content: '\eb81';
+            /* bx-chevron-down */
+        }
+
+        table.dataTable thead>tr>th.sorting_asc:before,
+        table.dataTable thead>tr>th.sorting_desc:after {
+            opacity: 1;
+            /* Full opacity for sorted icon */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="#" class="app-brand-link">
+                        <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+                        <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item "><a href="Dashboard.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons bx bx-cog"></i>
+                            <div>System Admin</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a>
+                            </li>
+                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+                            <li class="menu-item "><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+                        </ul>
+                    </li>
+                  <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons bx bx-user"></i>
+                            <div>User Profile</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="User_Profile_Updation.html" class="menu-link">User
+                                    Profile Updation</a>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">User Profile
+                                    Approval</a></li>
+                            <li class="menu-item"><a href="#" class="menu-link">Approved User
+                                    Profile</a></li>
+                            <li class="menu-item"><a href="#" class="menu-link">Send Mail
+                                    Approval</a></li>
+                        </ul>
+                    </li>
+                     <li class="menu-item open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                           <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div>Project</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Project-Management.html" class="menu-link">Project Management</a>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">Project Activities</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="Timesheet.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+
+                    <li class="menu-item open active">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-detail"></i> <div>Manage Leave</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item active"><a href="Leave-Dashboard.html" class="menu-link">Leave Dashboard</a>
+                            </li>
+                            <li class="menu-item"><a href="Approve-Leave.html" class="menu-link">Approve Leave</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav
+                    class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <div class="navbar-nav align-items-center">
+                        <div class="nav-item d-flex align-items-center">
+                            <i class="bx bx-search fs-4 lh-0"></i>
+                            <input
+                                type="text"
+                                class="form-control border-0 shadow-none"
+                                placeholder="Search..."
+                                aria-label="Search..."
+                            />
+                        </div>
+                    </div>
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0 me-3">
+                                                <div class="avatar avatar-online">
+                                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <span class="fw-semibold d-block">John Doe</span>
+                                                <small class="text-muted">Admin</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bx bx-user me-2"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bx bx-cog me-2"></i>
+                                        <span class="align-middle">Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="d-flex align-items-center align-middle">
+                                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                                            <span class="flex-grow-1 align-middle">Billing</span>
+                                            <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="auth-login-basic.html">
+                                        <i class="bx bx-power-off me-2"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <nav aria-label="breadcrumb" class="mb-3">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Manage Leave</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Leave Dashboard</li>
+                            </ol>
+                        </nav>
+                        <div class="row">
+                            <div class="col-xxl">
+                                <div class="card mb-4">
+                                    <div class="card-header card-header-custom">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="mb-0 me-4 ms-2" style="font-size: 1.25rem;">LEAVE STATUS</h5>
+                                            <div class="col-sm-4"> <select id="leaveStatusFilter" class="form-select">
+                                                    <option selected>Current</option>
+                                                    <option value="Past">Past</option>
+                                                    <option value="Upcoming">Upcoming</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="leaveStatusTable" class="table table-striped">
+                                                <thead class="table-header-orange">
+                                                    <tr>
+                                                        <th>Leave Type</th>
+                                                        <th>Carry Forward</th>
+                                                        <th>YS Earned</th>
+                                                        <th>YS Consumed</th>
+                                                        <th>Pending Approval</th>
+                                                        <th>Balance Available</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-border-bottom-0">
+                                                    <tr>
+                                                        <td>Privilege Leave (PL)</td>
+                                                        <td>10.00</td>
+                                                        <td>20.00</td>
+                                                        <td>0.0</td>
+                                                        <td>0.0</td>
+                                                        <td>30.0</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="datatables-footer-container d-flex justify-content-between align-items-center">
+                                        <div id="leaveStatusTable_info" class="dataTables_info"></div>
+                                        <div id="leaveStatusTable_paginate" class="dataTables_paginate paging_simple_numbers"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-xxl">
+                                <div class="card mb-4">
+                                    <div class="card-header card-header-custom">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0" style="font-size: 1.25rem;">LEAVE REQUEST LIST</h5>
+                                            <button type="button" class="btn btn-primary btn-primary-custom">
+                                                LEAVE REQUEST
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div style="padding: 1rem 1.5rem 0rem 1.5rem;"> 
+                                        <label for="customSearchInput" class="form-label visually-hidden">Search:</label>
+                                        <input type="search" id="customSearchInput" class="form-control" placeholder="Search">
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="leaveRequestListTable" class="table table-striped">
+                                                <thead class="table-header-orange">
+                                                    <tr>
+                                                        <th>Leave Type</th>
+                                                        <th>Leave Reason</th>
+                                                        <th>Day Off</th>
+                                                        <th>Begin Date</th>
+                                                        <th>End Date</th>
+                                                        <th>Status</th>
+                                                        <th>Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-border-bottom-0">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="datatables-footer-container d-flex justify-content-between align-items-center">
+                                        <div id="leaveRequestListTable_info" class="dataTables_info"></div>
+                                        <div id="leaveRequestListTable_paginate" class="dataTables_paginate paging_simple_numbers"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTables for the Leave Status table
+            $('#leaveStatusTable').DataTable({
+                "paging": true,
+                "searching": false, // Disable default DataTables search
+                "ordering": true, // Enable sorting
+                "info": true,
+                "lengthChange": false, // Disable "Show X entries" dropdown
+                "dom": '<"top">rt<"bottom"ip><"clear">', // Custom DOM for info and paginate
+                "language": {
+                    "info": "Showing _START_ to _END_ of _TOTAL_ entries", // Updated info format
+                    "paginate": {
+                        "previous": "Previous",
+                        "next": "Next"
+                    },
+                    "zeroRecords": "No data available in table",
+                    "emptyTable": "No data available in table"
+                },
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var wrapper = $(api.table().container()).closest('.card'); // Find the parent card
+                    var infoDiv = wrapper.find('.datatables-footer-container .dataTables_info');
+                    var paginateDiv = wrapper.find('.datatables-footer-container .dataTables_paginate');
+
+                    // Detach and append DataTables generated info and paginate elements
+                    // This is crucial because DataTables appends them directly to the wrapper
+                    // but we want them in our custom div.
+                    $(api.table().container()).find('.dataTables_info').detach().appendTo(infoDiv);
+                    $(api.table().container()).find('.dataTables_paginate').detach().appendTo(paginateDiv);
+
+                    // Force the '1' to be gray if there's only one page
+                    if (api.page.info().pages <= 1) {
+                        paginateDiv.find('.paginate_button').addClass('disabled');
+                    }
+                }
+            });
+
+            // Initialize DataTables for the Leave Request List table
+            var leaveRequestListTable = $('#leaveRequestListTable').DataTable({
+                "paging": true,
+                "searching": false, // Disable default DataTables search (we have a custom one)
+                "ordering": true, // Enable sorting
+                "info": true,
+                "lengthChange": false, // Disable "Show X entries" dropdown
+                "dom": '<"top">rt<"bottom"ip><"clear">', // Custom DOM for info and paginate
+                "language": {
+                    "info": "Showing _START_ to _END_ of _TOTAL_ entries", // Updated info format
+                    "paginate": {
+                        "previous": "Previous",
+                        "next": "Next"
+                    },
+                    "zeroRecords": "No data available in table",
+                    "emptyTable": "No data available in table"
+                },
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var wrapper = $(api.table().container()).closest('.card'); // Find the parent card
+                    var infoDiv = wrapper.find('.datatables-footer-container .dataTables_info');
+                    var paginateDiv = wrapper.find('.datatables-footer-container .dataTables_paginate');
+
+                    // Detach and append DataTables generated info and paginate elements
+                    $(api.table().container()).find('.dataTables_info').detach().appendTo(infoDiv);
+                    $(api.table().container()).find('.dataTables_paginate').detach().appendTo(paginateDiv);
+
+                    // Force the '1' to be gray if there's only one page
+                    if (api.page.info().pages <= 1) {
+                        paginateDiv.find('.paginate_button').addClass('disabled');
+                    }
+                }
+            });
+
+            // Custom search functionality for Leave Request List table
+            $('#customSearchInput').on('keyup', function () {
+                leaveRequestListTable.search(this.value).draw();
+            });
+        });
+    </script>
+</body>
+
+</html>

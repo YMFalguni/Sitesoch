@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+  data-template="vertical-menu-template-free">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Add Role | Sitesoch</title>
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <script src="../assets/vendor/js/helpers.js"></script>
+  <script src="../assets/js/config.js"></script>
+</head>
+
+<body>
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <div class="app-brand demo">
+          <a href="#" class="app-brand-link">
+            <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+            <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+          </a>
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+          </a>
+        </div>
+        <div class="menu-inner-shadow"></div>
+        <ul class="menu-inner py-1">
+          <li class="menu-item"><a href="Dashboard.html" class="menu-link"><i
+                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+          <li class="menu-item active open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle active">
+              <i class="menu-icon tf-icons bx bx-cog"></i>
+              <div>System Admin</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a>
+              </li>
+              <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+              <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+              <li class="menu-item active"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+            </ul>
+          </li>
+           <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons bx bx-user"></i>
+                            <div>User Profile</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="User_Profile_Updation.html" class="menu-link">User
+                                    Profile Updation</a>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">User Profile
+                                    Approval</a></li>
+                            <li class="menu-item"><a href="#" class="menu-link">Approved User
+                                    Profile</a></li>
+                            <li class="menu-item"><a href="#" class="menu-link">Send Mail
+                                    Approval</a></li>
+                        </ul>
+                    </li>
+          <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                         <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div>Project</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Project-Management.html" class="menu-link">Project Management</a>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">Project Activities</a></li>
+
+                        </ul>
+                    </li>
+          <li class="menu-item"><a href="Time-Sheet.html" class="menu-link"><i
+                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+          <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-detail"></i> <div>Manage Leave</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item "><a href="Leave-Dashboard.html" class="menu-link">Leave Dashboard</a>
+                            </li>
+                            <li class="menu-item"><a href="Approve-Leave.html" class="menu-link">Approve Leave</a></li>
+                        </ul>
+                    </li>
+        </ul>
+      </aside>
+      <div class="layout-page">
+        <nav
+          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+          id="layout-navbar">
+          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
+          </div>
+          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+             <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              
+              <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                  <div class="avatar avatar-online">
+                    <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                  </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3">
+                          <div class="avatar avatar-online">
+                            <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                          </div>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="fw-semibold d-block">John Doe</span>
+                          <small class="text-muted">Admin</small>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i>My Profile</a></li>
+                  <li><a class="dropdown-item" href="login.html"><i class="bx bx-power-off me-2"></i>Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="content-wrapper">
+          <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="p-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-custom-icon mb-0">
+                  <li class="breadcrumb-item"><a href="javascript:void(0);">System Admin</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0);">Role Master</a></li>
+                  <li class="breadcrumb-item active"><a href="Add-Role.html">Add Role</a>
+                </ol>
+              </nav>
+            </div>
+            <div class="card mt-3">
+              <div class="card-body pt-4">
+                <form id="formAccountSettings" method="POST" onsubmit="return false">
+                  <div class="row g-6">
+                    <div class="col-md-6 mb-2">
+                      <label for="Name" class="form-label">Role Name</label>
+                      <input class="form-control" type="text" id="Name" name="Name" placeholder="Enter Organization Name">
+                    </div>
+                     <div class="col-md-6 mb-2">
+                      <label for="Name" class="form-label">Role Description</label>
+                      <input class="form-control" type="text" id="Name" name="Name" placeholder="Enter Organization Name">
+                      <div class="mt-4 float-end">  
+                  </div>
+                  
+                  </div>
+                <div class="row pt-1 g-md-2">
+
+                  <div class="col-md-6 mb-2">
+                   <label for="Name" class="form-label">Status</label>
+                  <select id="filterStatus" class="form-select">
+                      <option value="">Draft</option>
+                      <option value="Active">Active</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Inactive">Inactive</option>
+                    </select>
+                    
+                  </div>
+                  </div>
+                  <div class="col-12 text-end">
+  <a href="Role-Master.html" class="btn btn-outline-danger m-1">Cancel</a>
+  <button type="submit" class="btn btn-outline-primary m-1">Save changes</button>
+</div>
+                 
+                  <div class="col-md-4">
+                    <!-- <select id="filterSize" class="form-select">
+                      <option value="">All Sizes</option> -->
+                      <!-- <option value="1000">Less than 1000</option>
+                      <option value=">1000">1000+</option>
+                    </select> -->
+                  </div>
+                </div>
+              </div>
+              <div class=" table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Sr.No</th>
+                      <th>Components</th>
+                      <th>Module</th>
+                      <!-- <th>Category</th> -->
+                      <!-- <th>Organization Size</th> -->
+                      <!-- <th>Industry</th> -->
+                      <th>Transaction Group</th>
+                      <th>Access</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-border-bottom-0">
+                    <tr>
+                      <td>1</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td> -->
+                      <!-- <td>1000</td> -->
+                      <!-- <td>IT Solution / Services</td> -->
+                      <td><span class="">Organization Masters</span></td>
+                      <td><input type="checkbox" name="access1" /></td>
+                      
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td> -->
+                      <!-- <td>12365</td> -->
+                      <!-- <td>E-Commerce</td> -->
+                      <td><span class="">Skill Master</span></td>
+                      <td><input type="checkbox" name="access2" /></td>
+                    </tr>
+                    
+                    <tr>
+                      <td>3</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td> -->
+                      <!-- <td>1450</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">User Master</span></td>
+                        <td><input type="checkbox" name="access3" /></td>
+
+                     </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Role Master</span></td>
+                      <td><input type="checkbox" name="access4" /></td>
+                     </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Projects</td>
+                      <td>Project Management</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Project Management</span></td>
+                      <td><input type="checkbox" name="access5" /></td>
+                      </tr>
+
+                    <tr>
+                      <td>6</td>
+                      <td>Projects</td>
+                      <td>Project Management</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Project Activities</span></td>
+                       <td><input type="checkbox" name="access6" /></td>
+                     </tr>
+
+                      <tr>
+                      <td>7</td>
+                      <td>Attendance</td>
+                      <td>Report</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Application Registration</span></td>
+                      <td><input type="checkbox" name="access7" /></td>
+                      </tr>
+
+                    <tr>
+                      <td>8</td>
+                      <td>Report</td>
+                      <td>Report</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Daily Attendance</span></td>
+                       <td><input type="checkbox" name="access8" /></td>
+                     </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>Report</td>
+                      <td>Report</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Monthly Attendance</span></td>
+                       <td><input type="checkbox" name="access9" /></td>
+                     
+                    </tr>
+
+                    <tr>
+                      <td>10</td>
+                      <td>Timesheet</td>
+                      <td>Timesheet Management</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">My Time Sheet</span></td>
+                      <td><input type="checkbox" name="access10" /></td>
+                    
+                    </tr>
+
+                     <tr>
+                      <td>11</td>
+                      <td>Timesheet</td>
+                      <td>Timesheet Management</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Approve Timesheet</span></td>
+                      <td><input type="checkbox" name="access11" /></td>
+                    </tr>
+
+
+                     <tr>
+                      <td>12</td>
+                      <td>Timesheet</td>
+                      <td>Timesheet Management</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Approved Timesheet</span></td>
+                      <td><input type="checkbox" name="access12" /></td>
+                      
+                    </tr>
+
+
+                     <tr>
+                      <td>13</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Degree</span></td>
+                      <td><input type="checkbox" name="access13" /></td>
+                      
+                    </tr>
+                     <tr>
+                      <td>14</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Dsignation</span></td>
+                      <td><input type="checkbox" name="access14" /></td>
+                      
+                    </tr>
+                     <tr>
+                      <td>15</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Industry</span></td>
+                      <td><input type="checkbox" name="access15" /></td>
+                      
+                    </tr>
+                     <tr>
+                      <td>16</td>
+                      <td>System Admin</td>
+                      <td>Masters</td>
+                      <!-- <td>Customer</td>
+                      <td>1000</td>
+                      <td>IT Solution / Services</td> -->
+                      <td><span class="">Technology</span></td>
+                      <td><input type="checkbox" name="access16" /></td>
+                      
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="content-footer footer bg-footer-theme">
+          <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+            <div class="mb-2 mb-md-0">
+              ©
+              <script>document.write(new Date().getFullYear());</script>, made with ❤️ by <a href="#"
+                class="footer-link fw-bolder">Sitesoch Intern Team</a>
+            </div>
+          </div>
+        </footer>
+        <div class="content-backdrop fade"></div>
+      </div>
+    </div>
+  </div>
+  <div class="layout-overlay layout-menu-toggle"></div>
+  <script src="assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="assets/vendor/libs/popper/popper.js"></script>
+  <script src="assets/vendor/js/bootstrap.js"></script>
+  <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="assets/vendor/js/menu.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>

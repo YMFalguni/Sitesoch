@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Project Management | Sitesoch</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+
+    <style>
+        /* Custom styles to adjust padding/margin for a cleaner look */
+        .app-brand-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 20px;
+            margin-bottom: 0; /* Ensure no extra margin for the paragraph */
+        }
+
+        /* Adjust breadcrumb spacing */
+        .content-wrapper .container-xxl .fw-bold.py-2.mb-6 {
+            padding-top: 1rem !important; /* Adjust as needed */
+            padding-bottom: 1rem !important; /* Adjust as needed */
+            margin-bottom: 1.5rem !important; /* Standard spacing for mb-4 */
+        }
+        
+        /* Reduce redundant padding inside card body for forms */
+        .card-body.form-card-body {
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem; /* Adjust to reduce vertical space below the form */
+        }
+
+        /* Adjust row margins in the form */
+        .form-row-mb {
+            margin-bottom: 1rem !important; /* Consistent small margin for form rows */
+        }
+
+        /* Specific adjustment for the last row before the table */
+        .form-row-mb-last {
+            margin-bottom: 1.5rem !important; /* A bit more space before the table */
+        }
+
+        /* Adjust card header padding */
+        .card-header.form-header {
+            padding-bottom: 0.75rem !important; /* Standard padding */
+        }
+        
+        /* Adjust tab pane margin */
+        .tab-content .tab-pane {
+            margin-top: 0 !important; /* Remove negative margin */
+        }
+
+        /* Adjust table card padding and margin */
+        .table-card {
+            padding: 1rem !important; /* Adjust padding as needed */
+            margin-top: 1rem !important; /* Adjust margin-top as needed */
+            margin-bottom: 1rem !important; /* Adjust margin-bottom as needed */
+        }
+
+        .inactive-input {
+            background-color: #e9ecef !important;
+            pointer-events: none;
+        }
+
+         /* Modal Header and Footer background and border */
+         .modal-header-custom {
+            background-color: #F8F9FA;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .modal-footer-custom {
+            background-color: #F8F9FA;
+            border-top: 1px solid #dee2e6;
+        }
+        .cancel-button-red {
+    background-color: #dc3545; /* Bootstrap's danger red */
+    border-color: #dc3545;
+    color: white; /* Ensures text is white */
+}
+
+.cancel-button-red:hover {
+    background-color: #c82333; /* Darker red on hover */
+    border-color: #bd2130;
+}
+/* Custom Checkbox Styling */
+.form-check-input:checked {
+    background-color: #dc3545; /* Red background when checked */
+    border-color: #dc3545; /* Red border when checked */
+}
+
+.form-check-input:checked[type="checkbox"] {
+    /* Create a white tick mark using a pseudo-element or background image */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+    background-size: 100% 100%; /* Ensure the SVG fills the checkbox */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Optional: Style for the unchecked state if you want a different border color */
+.form-check-input {
+    border-color: grey /* Red border for unchecked checkbox */
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+           <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="#" class="app-brand-link">
+                        <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+                        <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                  <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item "><a href="Dashboard.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-cog"></i>
+                            <div>System Admin</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a>
+                            </li>
+                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+                            <li class="menu-item "><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+                        </ul>
+                    </li>
+                     <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons bx bx-user"></i>
+                            <div>User Profile</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="User_Profile_Updation.html" class="menu-link">User
+                                    Profile Updation</a>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">User Profile
+                                    Approval</a></li>
+                            <li class="menu-item"><a href="#" class="menu-link">Approved User
+                                    Profile</a></li>
+                            <li class="menu-item"><a href="#" class="menu-link">Send Mail
+                                    Approval</a></li>
+                        </ul>
+                    </li>
+                     <li class="menu-item active open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                         <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div>Project</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item active"><a href="Project-Management.html" class="menu-link">Project Management</a>
+                            </li>
+                            <li class="menu-item"><a href="#" class="menu-link">Project Activities</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="Timesheet.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-detail"></i> <div>Manage Leave</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item "><a href="Leave-Dashboard.html" class="menu-link">Leave Dashboard</a>
+                            </li>
+                            <li class="menu-item"><a href="Approve-Leave.html" class="menu-link">Approve Leave</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav
+                    class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
+                </div>
+              </div>
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-semibold d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-user me-2"></i>
+                        <span class="align-middle">My Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <i class="bx bx-cog me-2"></i>
+                        <span class="align-middle">Settings</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="d-flex align-items-center align-middle">
+                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="auth-login-basic.html">
+                        <i class="bx bx-power-off me-2"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                </ul>
+            </div>
+          </nav>
+
+          <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="fw-bold py-2 mb-4"><span class="text-muted fw-light">Projects/</span>Project Management</h4>
+
+                        <div class="row">
+                            <div class="col-xxl">
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex align-items-center justify-content-between form-header">
+                                        <h5 class="mb-0" style="font-size: 1.25rem;">Project Master</h5>
+                                    </div>
+
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="project-info" role="tabpanel">
+
+                                            <div class="card-body form-card-body">
+                                                <form>
+                                                    <div class="row form-row-mb align-items-center">
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="project-name">Project Name</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="text" class="form-control" id="project-name"
+                                                                placeholder="NON PROJECT" />
+                                                        </div>
+
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="project-description">Project
+                                                            Description</label>
+                                                        <div class="col-sm-4">
+                                                            <textarea class="form-control" id="project-description"
+                                                                rows="1" placeholder="NON PROJECT"
+                                                                style="resize: none;"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row form-row-mb align-items-center">
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="client">Client</label>
+                                                        <div class="col-sm-4">
+                                                            <select id="client" class="form-select">
+                                                                <option selected disabled>Select Client</option>
+                                                                <option value="Omnino">Omnino</option>
+                                                                <option value="ABC Corporation">ABC Corporation</option>
+                                                                <option value="XYZ Solutions">XYZ Solutions</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="projectType">Project Type</label>
+                                                        <div class="col-sm-4">
+                                                            <select id="projectType" class="form-select">
+                                                                <option selected disabled>Miscellaneous</option>
+                                                                <option value="Development">Development</option>
+                                                                <option value="Support">Support</option>
+                                                                <option value="Research">Research</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row form-row-mb align-items-center">
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="currentStartDate">Current Start Date</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="date" id="currentStartDate"
+                                                                class="form-control" />
+                                                        </div>
+
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="currentEndDate">Current End Date</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="date" id="currentEndDate"
+                                                                class="form-control" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row form-row-mb align-items-center">
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="lastStartDate">Last Start Date</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="date" id="lastStartDate" class="form-control"
+                                                                value="2022-01-01" />
+                                                        </div>
+
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="lastEndDate">Last End Date</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="date" id="lastEndDate" class="form-control"
+                                                                value="2022-01-01" />
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row form-row-mb-last align-items-center">
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="initialStartDate">Initial Start Date</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="date" id="initialStartDate"
+                                                                class="form-control" value="2001-01-01" />
+                                                        </div>
+
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="initialEndDate">Initial End Date</label>
+                                                        <div class="col-sm-4">
+                                                            <input type="date" id="initialEndDate" class="form-control"
+                                                                value="2022-01-01" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row mb-3 align-items-center"> <label class="col-sm-2 col-form-label"
+                                                            for="projectManager">Project Manager</label>
+                                                        <div class="col-sm-4">
+                                                            <select id="projectManager" class="form-select">
+                                                                <option selected disabled>Vinayak Khyade</option>
+                                                                <option value="Omnino">Omnino</option>
+                                                                <option value="ABC Corporation">ABC Corporation</option>
+                                                                <option value="XYZ Solutions">XYZ Solutions</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <label class="col-sm-2 col-form-label"
+                                                            for="status">Status</label>
+                                                        <div class="col-sm-4">
+                                                            <select id="status" class="form-select">
+                                                                <option selected disabled>Active</option>
+                                                                <option value="Development">Development</option>
+                                                                <option value="Support">Support</option>
+                                                                <option value="Research">Research</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-end mb-2">
+                                                        <button type="button" class="btn btn-primary btn-sm"
+                                                            data-bs-toggle="modal" data-bs-target="#addTeamMemberModal">
+                                                            Add Team Member
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="card shadow p-1 mb-2 bg-white rounded table-card">
+
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Team Member Name</th>
+                                                                        <th>Email Id</th>
+                                                                        <th>Designation</th>
+                                                                        <th>Status</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody class="table-border-bottom-0">
+                                                                    <tr>
+                                                                        <td>Pooja Pokhane</td>
+                                                                        <td>pooja.prabhne@sitesoch.com</td>
+                                                                        <td>Junior Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Sateeh Sal</td>
+                                                                        <td>sateeh.sal@sitesoch.com</td>
+                                                                        <td>Technical Consultant</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Adidith Singh</td>
+                                                                        <td>adidith.singh@sitesoch.com</td>
+                                                                        <td>Associate Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Abhishek Yadav</td>
+                                                                        <td>abhishek.yadav@sitesoch.com</td>
+                                                                        <td>Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Ashwinay Yashar</td>
+                                                                        <td>ashwinay.yashar@sitesoch.com</td>
+                                                                        <td>Senior Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Alka Chavan</td>
+                                                                        <td>alka.chavan@sitesoch.com</td>
+                                                                        <td>Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Ameya Kulte</td>
+                                                                        <td>ameya.kulte@sitesoch.com</td>
+                                                                        <td>MIS Executive</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Ameet Nikhal</td>
+                                                                        <td>ameet.nikhal@sitesoch.com</td>
+                                                                        <td>Principle Business Analyst</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Ankita Ramsae</td>
+                                                                        <td>ankita.ramsae@sitesoch.com</td>
+                                                                        <td>Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Anika Gaud</td>
+                                                                        <td>anika.gaud@sitesoch.com</td>
+                                                                        <td>Technical Consultant</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Arhar Chavan</td>
+                                                                        <td>arhar.chavan@sitesoch.com</td>
+                                                                        <td>Test Engineer</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Anusha Vishnumukkala</td>
+                                                                        <td>anusha.v@sitesoch.com</td>
+                                                                        <td>Technical Consultant</td>
+                                                                        <td><span
+                                                                                class="badge bg-label-primary me-1">Active</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="addTeamMemberModal" tabindex="-1"
+                        aria-labelledby="addTeamMemberModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header modal-header-custom">
+                                    <h5 class="modal-title" id="addTeamMemberModalLabel">Add Team Members</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr style="background-color: inherit;">
+                                                    <th style="background-color:inherit;">Name</th>
+                                                    <th style="background-color:inherit;">Designation</th>
+                                                    <th style="background-color:inherit;">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Pooja Pokhane</td>
+                                                    <td>Junior Test Engineer</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="poojaCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="poojaCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Saketh Sai</td>
+                                                    <td>Technical consultant</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="sakethCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="sakethCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Aadesh Singh</td>
+                                                    <td>Associate Test Engineer</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="aadeshCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="aadeshCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Abhishek Yadav</td>
+                                                    <td>Test Engineer</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="abhishekCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="abhishekCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Aishwarya Jadhav</td>
+                                                    <td>Senior Test Engineer</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="aishwaryaCheckbox" >
+                                                            <label class="form-check-label"
+                                                                for="aishwaryaCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Alka Chavan</td>
+                                                    <td>Test Engineer</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="alkaCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="alkaCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ameya Katter</td>
+                                                    <td>MIS Executive</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="ameyaCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="ameyaCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Anand Nishad</td>
+                                                    <td>Principle Business Analyst</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="anandCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="anandCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Aniket Ramane</td>
+                                                    <td>Test Engineer</td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="aniketCheckbox">
+                                                            <label class="form-check-label"
+                                                                for="aniketCheckbox"></label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer modal-footer-custom">
+                                    <button type="button" class="btn btn-secondary cancel-button-red" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+                    <script src="../assets/vendor/libs/popper/popper.js"></script>
+                    <script src="../assets/vendor/js/bootstrap.js"></script>
+                    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+                    <script src="../assets/vendor/js/menu.js"></script>
+                    <script src="../assets/js/main.js"></script> <script>
+                        const dateFields = ["lastStartDate", "initialStartDate", "lastEndDate", "initialEndDate"];
+
+                        function disableIfSelected(input) {
+                            if (input.value) {
+                                input.classList.add("inactive-input");
+                                input.readOnly = true;
+                            }
+                        }
+
+                        window.addEventListener("DOMContentLoaded", () => {
+                            dateFields.forEach(id => {
+                                const input = document.getElementById(id);
+                                if (input) {
+                                    disableIfSelected(input);
+                                    input.addEventListener("change", () => disableIfSelected(input));
+                                }
+                            });
+                        });
+                    </script>
+</body>
+
+</html>
