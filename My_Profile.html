@@ -1,182 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
-    data-template="vertical-menu-template-free">
+  data-template="vertical-menu-template-free">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>User Profile Updation | Sitesoch</title>
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../assets/css/demo.css" />
-    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-    <script src="../assets/vendor/js/helpers.js"></script>
-    <script src="../assets/js/config.js"></script>
-    <style>
-        .navbar-blue-bg .nav-link,
-        .navbar-blue-bg .app-brand-link {
-            color: #fff !important;
-        }
-
-        /* Custom style to make nav-pills not spread full width */
-        .nav-pills.custom-width {
-            display: inline-flex;
-            /* Use inline-flex to make it shrink-to-fit its content */
-            flex-wrap: wrap;
-            /* Allow items to wrap if screen is too small */
-        }
-
-        .nav-pills.custom-width .nav-item {
-            flex-grow: 0;
-            /* Prevent individual items from growing */
-            flex-basis: auto;
-            /* Allow items to take natural width */
-        }
-
-        .table thead th {
-            color: #697a8d;
-        }
-
-        /* Adjust input field height within table */
-        .table .form-control {
-            min-height: 38px;
-            /* Standard input height */
-        }
-
-        .table textarea.form-control {
-            min-height: 38px;
-            resize: vertical;
-            /* Allow vertical resizing for textareas */
-        }
-
-        /* Custom styles to align fields in the input row as per the new screenshot */
-        .table tbody tr.input-row td {
-            vertical-align: top;
-            /* Align content to top */
-            padding-bottom: 0;
-            /* Reduce padding between rows if needed */
-        }
-
-        .table tbody tr.input-row td>.d-flex {
-            margin-bottom: 1rem;
-            /* Space between the two stacked inputs */
-        }
-
-        /* Hide content sections by default */
-        .content-section {
-            display: none;
-        }
-
-        /* Show the active content section */
-        .content-section.active {
-            display: block;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>My Profile | Sitesoch</title>
+  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <script src="../assets/vendor/js/helpers.js"></script>
+  <script src="../assets/js/config.js"></script>
 </head>
 
 <body>
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
-            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                <div class="app-brand demo">
-                    <a href="#" class="app-brand-link">
-                        <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
-                        <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
-                    </a>
-                    <a href="javascript:void(0);"
-                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                    </a>
-                </div>
-                <div class="menu-inner-shadow"></div>
-                <ul class="menu-inner py-1">
-                    <li class="menu-item"><a href="index.html" class="menu-link"><i
-                                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-cog"></i>
-                            <div>System Admin</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization
-                                    Master</a>
-                            </li>
-                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
-                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
-                            <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
-                        </ul>
-                    </li>
-                   <li class="menu-item"><a href="project.html" class="menu-link"><i
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <div class="app-brand demo">
+          <a href="#" class="app-brand-link">
+            <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+            <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+          </a>
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+          </a>
+        </div>
+        <div class="menu-inner-shadow"></div>
+        <ul class="menu-inner py-1">
+          <li class="menu-item"><a href="index.html" class="menu-link"><i
+                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle active">
+              <i class="menu-icon tf-icons bx bx-cog"></i>
+              <div>System Admin</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a>
+              </li>
+              <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+              <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+              <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+            </ul>
+          </li>
+          
+          <li class="menu-item"><a href="#" class="menu-link"><i class="menu-icon tf-icons bx bx-task"></i>Project</a></li>
+          <li class="menu-item"><a href="Time-Sheet.html" class="menu-link"><i
                 class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
-                <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
-          class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+          <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
+                class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+        </ul>
+      </aside>
+      <div class="layout-page">
+        <nav
+          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+          id="layout-navbar">
+          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
+          </div>
+          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <div class="navbar-nav align-items-center">
+                <div class="nav-item d-flex align-items-center">
+                  <i class="bx bx-search fs-4 lh-0"></i>
+                  <input
+                    type="text"
+                    class="form-control border-0 shadow-none"
+                    placeholder="Search..."
+                    aria-label="Search..."
+                  />
+                </div>
+              </div>
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                  <div class="avatar avatar-online">
+                    <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                  </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3">
+                          <div class="avatar avatar-online">
+                            <img src="assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                          </div>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="fw-semibold d-block">John Doe</span>
+                          <small class="text-muted">Admin</small>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li><a class="dropdown-item" href="My_Profile.html"><i class="bx bx-user me-2"></i>My Profile</a></li>
+                  <li><a class="dropdown-item" href="login.html"><i class="bx bx-power-off me-2"></i>Log Out</a></li>
                 </ul>
-            </aside>
-            <div class="layout-page">
-                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center navbar-blue-bg"
-                    id="layout-navbar">
-                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i
-                                class="bx bx-menu bx-sm"></i></a>
-                    </div>
-                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                        <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                            aria-label="Search..." />
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown">
-                                    <div class="avatar avatar-online">
-                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                                    </div>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <a class="dropdown-item" href="#">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar avatar-online">
-                                                        <img src="../assets/img/avatars/1.png" alt
-                                                            class="w-px-40 h-auto rounded-circle" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">John Doe</span>
-                                                    <small class="text-muted">Admin</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="My_Profile.html"><i class="bx bx-user me-2"></i>My Profile</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="login.html"><i
-                                                class="bx bx-power-off me-2"></i>Log Out</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+              </li>
+            </ul>
+          </div>
+        </nav>
                 <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 py-3"> <nav aria-label="breadcrumb" class="mb-3"> <ol class="breadcrumb breadcrumb-custom-icon mb-0">
+              
               
             </ol>
         </nav>
 
-        <div class="d-flex justify-content-end mb-4">
-            <button type="submit" class="btn btn-primary me-2">Submit</button>
-            <button type="button" class="btn btn-outline-secondary">Download</button>
-        </div>
+       <div class="d-flex justify-content-end mb-4">
+    <button type="submit" class="btn btn-primary me-2">Submit</button>
+    <button type="button" class="btn btn-primary">
+        <i class="bx bx-download"></i>
+    </button>
+</div>
 
-        <div class=""> <div class="card-header border-bottom"> <ul class="nav nav-pills card-header-pills custom-width" id="profileTabs">
+        <div class="card mt-4"> <div class="card-header border-bottom"> <ul class="nav nav-pills card-header-pills custom-width" id="profileTabs">
                     <li class="nav-item">
                         <a class="nav-link active" data-bs-toggle="pill" href="#account-content"><i
                                 class="bx bx-user me-1"></i> Profile</a>
@@ -196,30 +142,31 @@
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="pill" href="#training-content"><i
                                 class="bx bx-certification me-1"></i> Training</a>
+                                
                     </li>
                 </ul>
             </div>
-            <div class="card"> <div class="tab-content">
+                 <div class="card"> <div class="tab-content">
                     <div class="tab-pane fade show active" id="account-content" role="tabpanel">
                          <div class="card-body ps-0 pe-0">
                             <form >
         <div class="row g-3">
           <div class="col-md-6">
             <label for="userId" class="form-label">User ID</label>
-            <input type="email" class="form-control" id="userId">
+            <input type="email" class="form-control" id="userId" placeholder="Enter User ID" >
           </div>
           <div class="col-md-6">
             <label for="employeeId" class="form-label">Employee ID</label>
-            <input type="text" class="form-control" id="employeeId" value="">
+            <input type="text" class="form-control" id="employeeId" value="" placeholder="Enter Employee ID">
           </div>
 
           <div class="col-md-6">
             <label for="firstName" class="form-label">First Name *</label>
-            <input type="text" class="form-control" id="firstName" value="">
+            <input type="text" class="form-control" id="firstName" value="" placeholder=" Enter First Name">
           </div>
           <div class="col-md-6">
             <label for="lastName" class="form-label">Last Name</label>
-            <input type="text" class="form-control" id="lastName" value="">
+            <input type="text" class="form-control" id="lastName" value="" placeholder="Enter Last Name">
           </div>
 
           <div class="col-md-6">
@@ -241,20 +188,20 @@
 
           <div class="col-md-6">
             <label for="emailId" class="form-label">Email ID *</label>
-            <input type="email" class="form-control" id="emailId" >
+            <input type="email" class="form-control" id="emailId" placeholder="Enter Email ID" >
           </div>
           <div class="col-md-6">
             <label for="mobileNumber" class="form-label">Mobile Number *</label>
-            <input type="text" class="form-control" id="mobileNumber">
+            <input type="text" class="form-control" id="mobileNumber" placeholder="Enter Mobail No">
           </div>
 
           <div class="col-md-6">
             <label for="passportNumber" class="form-label">Passport Number</label>
-            <input type="text" class="form-control" id="passportNumber">
+            <input type="text" class="form-control" id="passportNumber" placeholder="Enter Passport No">
           </div>
           <div class="col-md-6">
             <label for="passportExpiry" class="form-label">Passport Expiry Date</label>
-            <input type="date" class="form-control" id="passportExpiry">
+            <input type="date" class="form-control" id="passportExpiry" placeholder="Enter Passport Expiry Date">
           </div>
 
           <div class="col-md-6">
@@ -295,7 +242,7 @@
           </div>
           <div class="col-md-6">
             <label for="clientManager" class="form-label">Client Reporting Manager</label>
-            <input type="text" class="form-control" id="clientManager">
+            <input type="text" class="form-control" id="clientManager" placeholder="Enter Client Reporting Manager">
           </div>
         </div>
 
@@ -305,82 +252,70 @@
                     </div>
 
                     <div class="tab-pane fade" id="work-experience-content" role="tabpanel">
-                        <h5 class="card-header border-0 pb-0 ps-0">Work Experience Details</h5>
-                        <div class="card-body ps-0 pe-0">
-                            <div class="table-responsive text-nowrap">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>SR NO.</th>
-                                            <th>FROM MONTH & YEAR*</th>
-                                            <th>TO MONTH & YEAR*</th>
-                                            <th>COMPANY & ROLE*</th>
-                                            <th>DESIGNATION & SKILL CAPACITY*</th>
-                                            <th>ACTIONS</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-border-bottom-0">
-                                        <tr class="input-row">
-                                            <td></td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <div class="input-group date mb-3" id="fromMonthYearPicker">
-                                                        <input type="date" class="form-control date-picker">
-                                                    </div>
-                                                    <input type="text" class="form-control" id="workExperience" placeholder="Work Experience">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <div class="input-group date mb-3" id="toMonthYearPicker">
-                                                        <input type="date" class="form-control date-picker">
-                                                    </div>
-                                                    </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <div class="input-group date mb-3">
-                                                        <input type="text" class="form-control" id="companyName" placeholder="Company">
-                                                    </div>
-                                                    <input type="text" class="form-control" id="role" placeholder="Role">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <div class="input-group date mb-3">
-                                                        <input type="text" class="form-control" id="designation" placeholder="Designation">
-                                                    </div>
-                                                    <input type="text" class="form-control" id="skillCapacity" placeholder="Skill Capacity">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-primary">
-                                                    <i class="bx bx-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>2020-01</td>
-                                            <td></td> <td>Company X & Developer</td> <td>Sr. Developer & Java, Spring</td> <td>
-                                                <button type="button" class="btn btn-icon btn-outline-secondary me-2">
-                                                    <i class="bx bx-edit"></i>
-                                                </button>
-                                                <button type="button" class="btn btn-icon btn-outline-danger">
-                                                    <i class="bx bx-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+   
+    <div class="card-body ps-0 pe-0">
+        <div class="table-responsive text-nowrap">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>SR NO.</th>
+                        <th>FROM MONTH & YEAR* & Work Experience</th>
+                        <th>TO MONTH & YEAR*</th>
+                        <th>COMPANY & ROLE*</th>
+                        <th>DESIGNATION & SKILL CAPACITY*</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    <tr class="input-row">
+                        <td></td>
+                        <td>
+                            <div class="input-group date" id="fromMonthYearPicker">
+                                <input type="date" id="currentStartDate" class="form-control">
                             </div>
-                        </div>
-                    </div>
+                        </td>
+                        <td>
+                            <div class="input-group date" id="toMonthYearPicker">
+                                <input type="date" id="currentEndDate" class="form-control">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="companyName" placeholder="Company">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="designation" placeholder="Designation">
+                            </div>
+                        </td>
+                        <td rowspan="2">
+                            <button type="button" class="btn btn-icon btn-primary">
+                                <i class="bx bx-plus"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="input-row-details">
+                        <td></td> <td colspan="2"> <input type="text" class="form-control" id="workExperience" placeholder="Work Experience">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="role" placeholder="Role">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="skillCapacity" placeholder="Skill Capacity">
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
                     <div class="tab-pane fade" id="education-content" role="tabpanel">
-                        <h5 class="card-header border-0 pb-0 ps-0">Education Details</h5>
+                     
                         <div class="card-body ps-0 pe-0">
                             <div class="table-responsive text-nowrap">
-                                <table class="table">
+                                <table class=" table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>Sr No.</th>
@@ -395,8 +330,7 @@
                                             <td></td>
                                             <td>
                                                 <div class="input-group">
-                                                    <input type="date" class="form-control date-picker"
-                                                        placeholder="Select From Date">
+                                                    <input type="date" id="currentStartDate" class="form-control">
                                                 </div>
                                             </td>
                                             <td>
@@ -450,10 +384,10 @@
                     </div>
 
                     <div class="tab-pane fade" id="training-content" role="tabpanel">
-                        <h5 class="card-header border-0 pb-0 ps-0">Training Details</h5>
+                        
                         <div class="card-body ps-0 pe-0">
                             <div class="table-responsive text-nowrap">
-                                <table class="table">
+                                <table class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>Sr No.</th>
@@ -468,17 +402,19 @@
                                     <tbody class="table-border-bottom-0">
                                         <tr>
                                             <td></td>
-                                            <td><input type="text" class="form-control" id="trainingProgram" placeholder=""></td>
-                                            <td><input type="text" class="form-control" id="type" placeholder=""></td>
-                                            <td><input type="text" class="form-control" id="trainingProvider" placeholder=""></td>
+                                            <td><input type="text" class="form-control" id="trainingProgram" placeholder="Enter Training Program"></td>
+
+                                            <td><input type="text" class="form-control" id="type" placeholder="Enter Training Type"></td>
+
+                                            <td><input type="text" class="form-control" id="trainingProvider" placeholder="Enter Training Provider"></td>
                                             <td>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="HH:MM"
-                                                        aria-label="Hours">
-                                                    <span class="input-group-text"><i class="bx bx-time"></i></span>
+                                                   
+                                                       <input class="form-control" type="time" value="12:30:00" id="html5-time-input">
+                                                    
                                                 </div>
                                             </td>
-                                            <td><input type="text" class="form-control" id="credits" placeholder=""></td>
+                                            <td><input type="text" class="form-control" id="credits" placeholder=" Enter Credits"></td>
                                             <td>
                                                 <button type="button" class="btn btn-icon btn-primary">
                                                     <i class="bx bx-plus"></i>
@@ -521,99 +457,7 @@
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var profileTabs = new bootstrap.Tab(document.querySelector('#profileTabs a[data-bs-toggle="pill"].active'));
-
-                // Handle tab clicks to show/hide content
-                document.querySelectorAll('#profileTabs a[data-bs-toggle="pill"]').forEach(function (tab) {
-                    tab.addEventListener('click', function (event) {
-                        event.preventDefault(); // Prevent default link behavior
-
-                        // Hide all tab panes
-                        document.querySelectorAll('.tab-pane').forEach(function (pane) {
-                            pane.classList.remove('show', 'active');
-                        });
-
-                        // Show the target tab pane
-                        var targetId = tab.getAttribute('href');
-                        document.querySelector(targetId).classList.add('show', 'active');
-
-                        // Update active state of nav-link (Bootstrap 5 already handles this if data-bs-toggle="pill" is used correctly)
-                        // This manual step is usually not needed with Bootstrap's built-in tab functionality
-                        // document.querySelectorAll('#profileTabs .nav-link').forEach(function(navLink) {
-                        //     navLink.classList.remove('active');
-                        // });
-                        // tab.classList.add('active');
-                    });
-                });
-
-                // Initialize date pickers
-                $('.date-picker').datepicker({
-                    format: 'yyyy-mm-dd',
-                    autoclose: true,
-                    todayHighlight: true
-                });
-
-                // Function to add a new row (example for Work Experience, can be adapted for others)
-                document.querySelectorAll('.add-row-btn').forEach(button => {
-                    button.addEventListener('click', function() {
-                        const tableBody = this.closest('tbody');
-                        const newRow = tableBody.querySelector('.input-row').cloneNode(true);
-
-                        // Clear input values in the new row
-                        newRow.querySelectorAll('input, textarea').forEach(input => {
-                            input.value = '';
-                        });
-
-                        // Change the button to delete button
-                        const actionCell = newRow.querySelector('td:last-child');
-                        actionCell.innerHTML = `
-                            <button class="btn btn-icon btn-outline-secondary me-2 edit-row-btn">
-                                <i class="bx bx-edit"></i>
-                            </button>
-                            <button class="btn btn-icon btn-outline-danger delete-row-btn">
-                                <i class="bx bx-trash"></i>
-                            </button>
-                        `;
-
-                        // Add event listener for the new delete button
-                        actionCell.querySelector('.delete-row-btn').addEventListener('click', function() {
-                            this.closest('tr').remove();
-                        });
-
-                        // Add event listener for the new edit button (if functionality is needed)
-                        actionCell.querySelector('.edit-row-btn').addEventListener('click', function() {
-                             alert('Edit functionality can be implemented here.');
-                        });
-
-                        // Insert the new row before the first data row (after the input row)
-                        // Find the first non-input row to insert before it, or append if none
-                        let firstDataRow = tableBody.querySelector('tr:not(.input-row):not(:first-child)');
-                        if (firstDataRow) {
-                            tableBody.insertBefore(newRow, firstDataRow);
-                        } else {
-                            // If only the input row exists, insert after it
-                            tableBody.appendChild(newRow);
-                        }
-
-                         // Re-initialize datepicker for new row's date inputs
-                         $(newRow).find('.date-picker').datepicker({
-                            format: 'yyyy-mm-dd',
-                            autoclose: true,
-                            todayHighlight: true
-                        });
-                    });
-                });
-
-                // Add event listeners for existing delete buttons
-                document.querySelectorAll('.delete-row-btn').forEach(button => {
-                    button.addEventListener('click', function() {
-                        this.closest('tr').remove();
-                    });
-                });
-            });
-        </script>
+      <script src="assets/js/my_pro.js"></script>
 </body>
 
 </html>

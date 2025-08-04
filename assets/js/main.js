@@ -116,3 +116,70 @@ let menu, animate;
   // Auto update menu collapsed/expanded based on the themeConfig
   window.Helpers.setCollapsed(true, false);
 })();
+
+const dateFields = ["lastStartDate", "initialStartDate", "lastEndDate", "initialEndDate"];
+
+                        function disableIfSelected(input) {
+                            if (input.value) {
+                                input.classList.add("inactive-input");
+                                input.readOnly = true;
+                            }
+                        }
+
+                        window.addEventListener("DOMContentLoaded", () => {
+                            dateFields.forEach(id => {
+                                const input = document.getElementById(id);
+                                if (input) {
+                                    disableIfSelected(input);
+                                    input.addEventListener("change", () => disableIfSelected(input));
+                                }
+                            });
+                        });
+
+
+ $(document).ready(function () {
+  // LEAVE STATUS TABLE
+  $('#leaveStatusTable').DataTable({
+    paging: true,
+    info: true,
+    searching: false,
+    lengthChange: false,
+    pageLength: 5,
+    language: {
+      emptyTable: "No data available in table",
+      info: "Showing _START_ to _END_ of _TOTAL_ entries",
+      infoEmpty: "Showing 0 to 0 of 0 entries",
+      infoFiltered: "(filtered from _MAX_ total entries)",
+      paginate: {
+        previous: "Previous",
+        next: "Next"
+      },
+      search: "Search:"
+    }
+  });
+
+  // LEAVE REQUEST LIST TABLE
+  var leaveRequestListTable = $('#leaveRequestListTable').DataTable({
+    paging: true,
+    info: true,
+    searching: false,
+    lengthChange: false,
+    pageLength: 5,
+    language: {
+      emptyTable: "No data available in table",
+      info: "Showing _START_ to _END_ of _TOTAL_ entries",
+      infoEmpty: "Showing 0 to 0 of 0 entries",
+      infoFiltered: "(filtered from _MAX_ total entries)",
+      paginate: {
+        previous: "Previous",
+        next: "Next"
+      },
+      search: "Search:"
+    }
+  });
+
+  // Custom search input (leaveRequestListTable only)
+  $('#customSearchInput').on('keyup', function () {
+    leaveRequestListTable.search(this.value).draw();
+  });
+});

@@ -7,250 +7,210 @@
   <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../assets/vendor/css/core.css" />
   <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" />
   <link rel="stylesheet" href="../assets/css/demo.css" />
+ 
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" />
-
   <script src="../assets/vendor/js/helpers.js"></script>
   <script src="../assets/js/config.js"></script>
-
-  <style>
-    .table-header-orange th {
-      background-color: white;
-      color: #323232;
-    }
-
-    .btn-primary-custom {
-      background-color: #007bff;
-      border-color: #007bff;
-      color: white;
-    }
-
-    .btn-primary-custom:hover {
-      background-color: #0056b3;
-      border-color: #0056b3;
-    }
-
-    #customSearchInput {
-      width: 250px;
-      margin-bottom: 1rem;
-    }
-
-    .dataTables_paginate .pagination .paginate_button.current {
-      color: #323232 !important;
-    }
-
-    .dataTables_paginate .paginate_button.disabled {
-      color: #6c757d !important;
-      background-color: transparent !important;
-      border-color: transparent !important;
-      cursor: default;
-    }
-
-    table.dataTable thead > tr > th.sorting,
-    table.dataTable thead > tr > th.sorting_asc,
-    table.dataTable thead > tr > th.sorting_desc {
-      cursor: pointer;
-      position: relative;
-      padding-right: 26px !important;
-    }
-
-    table.dataTable thead > tr > th:before,
-    table.dataTable thead > tr > th:after {
-      position: absolute;
-      bottom: 0.9em;
-      display: block;
-      opacity: 0.3;
-      font-size: 0.7em;
-      line-height: 9px;
-      right: 10px;
-      font-family: 'Boxicons' !important;
-    }
-
-    table.dataTable thead > tr > th:before {
-      content: '\eb84';
-      bottom: 1.2em;
-    }
-
-    table.dataTable thead > tr > th:after {
-      content: '\eb81';
-    }
-
-    table.dataTable thead > tr > th.sorting_asc:before,
-    table.dataTable thead > tr > th.sorting_desc:after {
-      opacity: 1;
-    }
-
-    .breadcrumb {
-      margin-top: 1rem;
-    }
-  </style>
+  
+ 
 </head>
-
 <body>
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-      <!-- Sidebar/Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                <div class="app-brand demo">
-                     <a href="#" class="app-brand-link">
+        <div class="app-brand demo">
+          <a href="#" class="app-brand-link">
             <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
             <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
           </a>
-                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                    </a>
-                </div>
-                <div class="menu-inner-shadow"></div>
-                <ul class="menu-inner py-1">
-                    <li class="menu-item ">
-                        <a href="index.html" class="menu-link">
-                            <i class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle"> <i class="menu-icon tf-icons bx bx-cog"></i>
-                            <div>System Admin</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a></li>
-                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
-                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
-                            <li class="menu-item "><a href="Role-Master.html" class="menu-link">Role Master</a></li>
-                        </ul>
-                    </li>
-                    
-                   <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle"> <i class="menu-icon tf-icons bx bx-user"></i>
-                            <div>Project</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item"><a href="Project-Management.html" class="menu-link">Project Management</a></li>
-                            <li class="menu-item"><a href="Project Activities.html" class="menu-link">Project Activities</a></li>
-                            
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="project.html" class="menu-link"><i
-                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
-                   <li class="menu-item active"><a href="Leave-Dashboard.html" class="menu-link"><i
-                                class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
-            </aside>
-            
-      <!-- Main Page -->
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+          </a>
+        </div>
+        <div class="menu-inner-shadow"></div>
+        <ul class="menu-inner py-1">
+          <li class="menu-item "><a href="index.html" class="menu-link"><i class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-cog"></i>
+              <div>System Admin</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a></li>
+              <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+              <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+              <li class="menu-item "><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-task"></i>
+              <div>Project</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item"><a href="Manage-Project.html" class="menu-link">Project Management</a></li>
+              <li class="menu-item"><a href="Project-Activities.html" class="menu-link">Project Activities</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="Time-Sheet.html" class="menu-link"><i class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+          <li class="menu-item active"><a href="Leave-Dashboard.html" class="menu-link"><i class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+        </ul>
+      </aside>
       <div class="layout-page">
+        <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
+          </div>
+          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <div class="navbar-nav align-items-center">
+              <div class="nav-item d-flex align-items-center">
+                <i class="bx bx-search fs-4 lh-0"></i>
+                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
+              </div>
+            </div>
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="avatar avatar-online">
+                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                  </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0 me-3">
+                          <div class="avatar avatar-online">
+                            <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                          </div>
+                        </div>
+                        <div class="flex-grow-1">
+                          <span class="fw-semibold d-block">John Doe</span>
+                          <small class="text-muted">Admin</small>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="My_Profile.html">
+                      <i class="bx bx-user me-2"></i>
+                      <span class="align-middle">My Profile</span>
+                    </a>
+                  </li>
+                  <li>
+                    
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="auth-login-basic.html">
+                      <i class="bx bx-power-off me-2"></i>
+                      <span class="align-middle">Log Out</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <div class="content-wrapper">
           <div class="container-xxl flex-grow-1 container-p-y">
             <nav aria-label="breadcrumb" class="mb-3">
               <ol class="breadcrumb">
-               
                 <li class="breadcrumb-item active" aria-current="page">Leave Dashboard</li>
               </ol>
             </nav>
-
-            <!-- Leave Status Table -->
-            <div class="table-responsive mb-4">
-              <div class="d-flex align-items-center mb-2">
-                <h5 class="mb-0 me-4" style="font-size: 1.25rem;">LEAVE STATUS</h5>
-                <div class="col-sm-3">
-                  <select id="leaveStatusFilter" class="form-select">
-                    <option selected>Current</option>
-                    <option value="Past">Past</option>
-                    <option value="Upcoming">Upcoming</option>
-                  </select>
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h5 class="mb-0 me-4" style="font-size: 1.25rem;">LEAVE STATUS</h5>
+                  <div class="col-sm-3">
+                    <select id="leaveStatusFilter" class="form-select">
+                      <option selected>Current</option>
+                      <option value="Past">Past</option>
+                      <option value="Upcoming">Upcoming</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="table-responsive mb-4">
+                  <table id="leaveStatusTable" class="table table-bordered table-striped">
+                    <thead class="table-header-orange">
+                      <tr>
+                        <th>Leave Type</th>
+                        <th>Carry Forward</th>
+                        <th>YS Earned</th>
+                        <th>YS Consumed</th>
+                        <th>Pending Approval</th>
+                        <th>Balance Available</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Privilege Leave (PL)</td>
+                        <td>10.00</td>
+                        <td>20.00</td>
+                        <td>0.0</td>
+                        <td>0.0</td>
+                        <td>30.0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h5 class="mb-0" style="font-size: 1.25rem;">LEAVE REQUEST LIST</h5>
+                  <a href="Approve-Leave.html" class="btn btn-primary">LEAVE REQUEST</a>
+                </div>
+                <div class="mb-3">
+                  <input type="search" id="customSearchInput" class="form-control" placeholder="Search">
+                </div>
+                <div class="table-responsive">
+                  <table id="leaveRequestListTable" class="table table-bordered table-striped">
+                    <thead class="table-header-orange">
+                      <tr>
+                        <th>Leave Type</th>
+                        <th>Leave Reason</th>
+                        <th>Day Off</th>
+                        <th>Begin Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      </tbody>
+                  </table>
                 </div>
               </div>
-              <table id="leaveStatusTable" class="table table-bordered table-striped">
-                <thead class="table-header-orange">
-                  <tr>
-                    <th>Leave Type</th>
-                    <th>Carry Forward</th>
-                    <th>YS Earned</th>
-                    <th>YS Consumed</th>
-                    <th>Pending Approval</th>
-                    <th>Balance Available</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Privilege Leave (PL)</td>
-                    <td>10.00</td>
-                    <td>20.00</td>
-                    <td>0.0</td>
-                    <td>0.0</td>
-                    <td>30.0</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Leave Request List Table -->
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <h5 class="mb-0" style="font-size: 1.25rem;">LEAVE REQUEST LIST</h5>
-             <a href="Approve-Leave.html" class="btn btn-primary btn-primary-custom">LEAVE REQUEST</a>
-            </div>
-            <div class="mb-3">
-              <input type="search" id="customSearchInput" class="form-control" placeholder="Search">
-            </div>
-            <div class="table-responsive">
-              <table id="leaveRequestListTable" class="table table-bordered table-striped">
-                <thead class="table-header-orange">
-                  <tr>
-                    <th>Leave Type</th>
-                    <th>Leave Reason</th>
-                    <th>Day Off</th>
-                    <th>Begin Date</th>
-                    <th>End Date</th>
-                    <th>Status</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
             </div>
           </div>
+         <footer class="content-footer footer bg-footer-theme">
+                        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">
+                              © 2025, made with ❤️ by Sitesoch Intern Team
+                            </div>
+                        </div>
+                    </footer>
+                    <div class="content-backdrop fade"></div>
+                </div>
+                </div>
+            </div>
+
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Scripts -->
- <!-- Core JS -->
-<script src="../assets/vendor/libs/jquery/jquery.js"></script>
-<script src="../assets/vendor/libs/popper/popper.js"></script>
-<script src="../assets/vendor/js/bootstrap.js"></script>
-<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
-<!-- Menu JS (required for sidebar toggle to work) -->
-<script src="../assets/vendor/js/menu.js"></script>
-
-<!-- Main JS -->
-<script src="../assets/js/main.js"></script>
-
-
-  <script>
-    $(document).ready(function () {
-      $('#leaveStatusTable').DataTable({
-        paging: true,
-        searching: false,
-        ordering: true,
-        info: true,
-        lengthChange: false
-      });
-
-      var leaveRequestListTable = $('#leaveRequestListTable').DataTable({
-        paging: true,
-        searching: false,
-        ordering: true,
-        info: true,
-        lengthChange: false
-      });
-
-      $('#customSearchInput').on('keyup', function () {
-        leaveRequestListTable.search(this.value).draw();
-      });
-    });
-  </script>
+  
+  <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+  <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="../assets/vendor/js/menu.js"></script>
+  <script src="../assets/js/main.js"></script>
+  
 </body>
 </html>
