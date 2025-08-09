@@ -15,6 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
@@ -125,9 +127,11 @@
             border-color: grey;
             /* Red border for unchecked checkbox */
         }
+
         /* Adjusted width for search inputs in table header */
         .table-filter-input {
-            width: 120px; /* Adjust as needed */
+            width: 220px;
+            /* Adjust as needed */
             padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
         }
@@ -149,7 +153,7 @@
                 </div>
                 <div class="menu-inner-shadow"></div>
                 <ul class="menu-inner py-1">
-                    <li class="menu-item "><a href="index.html" class="menu-link"><i
+                    <li class="menu-item "><a href="Dashboard.html" class="menu-link"><i
                                 class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
                     <li class="menu-item">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -181,7 +185,9 @@
                                 class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
 
                     <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
-             class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+                                class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a>
+                       
+                    </li>
                 </ul>
             </aside>
             <div class="layout-page">
@@ -226,12 +232,21 @@
                                             </div>
                                         </a>
                                     </li>
+                                    
                                     <li>
-                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="My_Profile.html">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
                                     </li>
-                                     <li><a class="dropdown-item" href="My_Profile.html"><i class="bx bx-user me-2"></i>My Profile</a></li>
-                  <li><a class="dropdown-item" href="login.html"><i class="bx bx-power-off me-2"></i>Log Out</a></li>
-                
+
+                                  
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -240,7 +255,14 @@
 
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-2 mb-4"><span class="text-muted fw-light">Project Management/</span> Manage Project Activities</h4>
+                        <div class="p-3">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-custom-icon mb-0">
+                                    <li class="breadcrumb-item active"><a href="Manage-Project.html">Project Management</a></li>
+                                    <li class="breadcrumb-item active">Manage Project Activities</li>
+                                </ol>
+                            </nav>
+                        </div>
 
                         <div class="row">
                             <div class="col-xxl">
@@ -289,20 +311,6 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="row justify-content-end mt-3">
-                                                        <div class="col-sm-10 d-flex justify-content-end align-items-center">
-                                                            <div class="me-2">
-                                                                <input
-                                                                    type="text"
-                                                                    class="form-control"
-                                                                    placeholder="Search..."
-                                                                    aria-label="Search..."
-                                                                />
-                                                            </div>
-                                                            <button type="reset" class="btn btn-outline-secondary cancel-button-red">Cancel</button>
-                                                        </div>
-                                                    </div>
-
                                                 </form>
                                             </div>
                                         </div>
@@ -314,30 +322,49 @@
                         <div class="card table-card">
                             <div class="card-header d-flex align-items-center justify-content-between">
                                 <h5 class="mb-0">Project Activities</h5>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#responsibilityModal">
-                                    <span class="tf-icons bx bx-plus"></span>&nbsp; Create Table
-                                </button>
+                                
                             </div>
                             <div class="table-responsive text-nowrap">
-                                <table class="table table-hover">
+                                <table class="table table-bordered table-hover table-striped">
+
                                     <thead>
                                         <tr>
                                             <th>Activity Code</th>
-                                            <th>
-                                                Activity Name
-                                                <input type="text" class="form-control form-control-sm mt-1 table-filter-input" placeholder="Search">
-                                            </th>
-                                            <th>
-                                                Start Date
-                                                <input type="date" class="form-control form-control-sm mt-1 table-filter-input">
-                                            </th>
-                                            <th>
-                                                End Date
-                                                <input type="date" class="form-control form-control-sm mt-1 table-filter-input">
-                                            </th>
+                                            <th>Activity name</th>
+                                            <th>Start Date</th>
+                                            <th> End Date</th>
                                             <th>Status</th>
                                             <th>Primary Responsibility</th>
                                             <th>Actions</th>
+                                        </tr>
+                                        <tr>
+                                            <th>
+                                                
+                                            </th>
+                                            <th> 
+                                                <input type="text" class="form-control form-control-sm mt-1 table-filter-input" placeholder="Search">
+                                            </th> 
+                                            <th>
+                                                <input type="date" class="form-control form-control-sm mt-1 table-filter-input">
+                                            </th>
+                                            <th> 
+                                                <input type="date" class="form-control form-control-sm mt-1 table-filter-input">
+                                            </th>
+                                            <th>
+                                                <select class="form-select form-select-sm mt-1 table-filter-input">
+                                                    <option>All</option>
+                                                    <option>Active</option>
+                                                    <option>Inactive</option>
+                                                </select>
+                                            </th>
+                                            <th>
+
+                                            </th>
+                                            <th>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#responsibilityModal">
+                                                    <span class="tf-icons bx bx-plus"></span>&nbsp;
+                                                </button>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0" id="activity-table-body">
@@ -382,8 +409,37 @@
                         </div>
                 </div>
                 <div class="modal-footer modal-footer-custom">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title" id="historyModalLabel">History</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer modal-footer-custom">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -396,137 +452,215 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
-    <script>
-        // Dummy data for the table
-        const activities = [
-            { id: 'ACT2300010', name: 'LUNCH', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300011', name: 'Tea & Other Break', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300012', name: 'Research & Study', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300013', name: 'Reading General', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300014', name: 'Training Self', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300015', name: 'Training Other', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300016', name: 'Leave', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300017', name: 'Weekly Off', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300018', name: 'Holiday', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT23000737', name: 'Client Holiday', startDate: '01-01-2020', endDate: '01-12-2020', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT230001', name: 'Test', startDate: '16-07-2020', endDate: '24-07-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300026', name: 'Comp Off', startDate: '31-08-2020', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300100', name: 'Hardware Issue', startDate: '31-12-2020', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300127', name: 'Special Leave', startDate: '29-01-2021', endDate: '01-01-2023', status: 'Inactive', responsibility: 'Vinayak Khadye' },
-            { id: 'ACT2300185', name: 'Client Holiday - Optional', startDate: '01-04-2022', endDate: '31-12-2022', status: 'Active', responsibility: 'Vinayak Khadye' },
-        ];
+   <script>
+    // Dummy data for the table
+    const activities = [
+        { id: 'ACT2300010', name: 'LUNCH', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300011', name: 'Tea & Other Break', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300012', name: 'Research & Study', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300013', name: 'Reading General', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300014', name: 'Training Self', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300015', name: 'Training Other', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300016', name: 'Leave', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300017', name: 'Weekly Off', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300018', name: 'Holiday', startDate: '01-01-2001', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT23000737', name: 'Client Holiday', startDate: '01-01-2020', endDate: '01-12-2020', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT230001', name: 'Test', startDate: '16-07-2020', endDate: '24-07-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300026', name: 'Comp Off', startDate: '31-08-2020', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300100', name: 'Hardware Issue', startDate: '31-12-2020', endDate: '01-01-2023', status: 'Active', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300127', name: 'Special Leave', startDate: '29-01-2021', endDate: '01-01-2023', status: 'Inactive', responsibility: 'Vinayak Khadye' },
+        { id: 'ACT2300185', name: 'Client Holiday - Optional', startDate: '01-04-2022', endDate: '31-12-2022', status: 'Active', responsibility: 'Vinayak Khadye' },
+    ];
 
-        // Dummy data for responsibilities in the modal
-        const responsibilities = [
-            { name: 'Vinayak Khadye', primary: true, secondary: false },
-            { name: 'Rushika Khokalw', primary: false, secondary: true },
-            { name: 'Yogita Acharya', primary: false, secondary: false },
-            { name: 'Abhishek Jitha', primary: false, secondary: true },
-            { name: 'Ajay Sahu', primary: false, secondary: false },
-            { name: 'Akshay Pawar', primary: false, secondary: false },
-            { name: 'Alok Adhana', primary: false, secondary: false },
-            { name: 'Anand Nishad', primary: false, secondary: false },
-            { name: 'Anil Kumar Yadav', primary: false, secondary: false },
-            { name: 'Aarti Kuchare', primary: false, secondary: false },
-            { name: 'Ashwini Neeralak', primary: false, secondary: false },
-            { name: 'Babita Shoture', primary: false, secondary: false },
-            { name: 'Balajeh Kumar Pandey', primary: false, secondary: false },
-            { name: 'Chinamaya Kumar Panida', primary: false, secondary: false },
-            { name: 'Daliah Verma', primary: false, secondary: false },
-            { name: 'Harshdah Kubal', primary: false, secondary: false },
-            { name: 'Kalim Majewar', primary: false, secondary: false },
-            { name: 'Kanta Mahajan', primary: false, secondary: false },
-            { name: 'Krishna Chandra Maharana', primary: false, secondary: false },
-            { name: 'Mahesh Acharya', primary: false, secondary: false },
-            { name: 'Manoj Basukiran', primary: false, secondary: false },
-            { name: 'Mousam Tamhane', primary: false, secondary: false },
-            { name: 'Nishant Mishra', primary: false, secondary: false },
-            { name: 'Nita Verma', primary: false, secondary: false },
-            { name: 'Pandurana Kumar', primary: false, secondary: false },
-            // Add more names as needed
-        ];
+    // Dummy data for responsibilities in the modal
+    const responsibilities = [
+        { name: 'Vinayak Khadye', primary: true, secondary: false },
+        { name: 'Rushika Khokalw', primary: false, secondary: true },
+        { name: 'Yogita Acharya', primary: false, secondary: false },
+        { name: 'Abhishek Jitha', primary: false, secondary: true },
+        { name: 'Ajay Sahu', primary: false, secondary: false },
+        { name: 'Akshay Pawar', primary: false, secondary: false },
+        { name: 'Alok Adhana', primary: false, secondary: false },
+        { name: 'Anand Nishad', primary: false, secondary: false },
+        { name: 'Anil Kumar Yadav', primary: false, secondary: false },
+        { name: 'Aarti Kuchare', primary: false, secondary: false },
+        { name: 'Ashwini Neeralak', primary: false, secondary: false },
+        { name: 'Babita Shoture', primary: false, secondary: false },
+        { name: 'Balajeh Kumar Pandey', primary: false, secondary: false },
+        { name: 'Chinamaya Kumar Panida', primary: false, secondary: false },
+        { name: 'Daliah Verma', primary: false, secondary: false },
+        { name: 'Harshdah Kubal', primary: false, secondary: false },
+        { name: 'Kalim Majewar', primary: false, secondary: false },
+        { name: 'Kanta Mahajan', primary: false, secondary: false },
+        { name: 'Krishna Chandra Maharana', primary: false, secondary: false },
+        { name: 'Mahesh Acharya', primary: false, secondary: false },
+        { name: 'Manoj Basukiran', primary: false, secondary: false },
+        { name: 'Mousam Tamhane', primary: false, secondary: false },
+        { name: 'Nishant Mishra', primary: false, secondary: false },
+        { name: 'Nita Verma', primary: false, secondary: false },
+        { name: 'Pandurana Kumar', primary: false, secondary: false },
+        // Add more names as needed
+    ];
 
-        // Function to render table rows
-        function renderTableRows() {
-            const tableBody = document.getElementById('activity-table-body');
-            tableBody.innerHTML = ''; // Clear existing rows
+    // Dummy data for date history
+    const dateHistoryData = {
+        'ACT2300010': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' },
+            { type: 'Modified', startDate: '02-02-2023', endDate: '05-02-2023' },
+            { type: 'Modified', startDate: '06-02-2023', endDate: '10-02-2023' }
+        ],
+        'ACT2300011': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' },
+            { type: 'Modified', startDate: '02-01-2023', endDate: '05-01-2023' },
+             { type: 'Modified', startDate: '06-02-2023', endDate: '10-02-2023' }
+        ],
+        'ACT2300012': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+            
+        ],
+        'ACT2300013': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+        ],
+        'ACT2300014': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+        ],
+        'ACT2300015': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+        ],
+        'ACT2300016': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+        ],
+        'ACT2300017': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+        ],
+        'ACT2300018': [
+            { type: 'Initial', startDate: '01-01-2001', endDate: '01-01-2023' }
+        ],
+        'ACT23000737': [
+            { type: 'Initial', startDate: '01-01-2020', endDate: '01-12-2020' },
+            { type: 'Modified', startDate: '02-02-2021', endDate: '01-01-2022' }
+        ],
+        'ACT230001': [
+            { type: 'Initial', startDate: '16-07-2020', endDate: '24-07-2023' }
+        ],
+        'ACT2300026': [
+            { type: 'Initial', startDate: '31-08-2020', endDate: '01-01-2023' }
+        ],
+        'ACT2300100': [
+            { type: 'Initial', startDate: '31-12-2020', endDate: '01-01-2023' }
+        ],
+        'ACT2300127': [
+            { type: 'Initial', startDate: '29-01-2021', endDate: '01-01-2023' }
+        ],
+        'ACT2300185': [
+            { type: 'Initial', startDate: '01-04-2022', endDate: '31-12-2022' },
+            { type: 'Modified', startDate: '01-01-2023', endDate: '31-03-2023' }
+        ]
+    };
 
-            activities.forEach((activity, index) => {
+    // Function to render table rows
+    function renderTableRows() {
+        const tableBody = document.getElementById('activity-table-body');
+        tableBody.innerHTML = ''; // Clear existing rows
+
+        activities.forEach((activity, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td><strong>${activity.id}</strong></td>
+                <td>${activity.name}</td>
+                <td>${activity.startDate} <button type="button" class="btn btn-sm btn-icon p-0" onclick="showHistory('${activity.id}')"><i class='bx bx-time'></i></button></td>
+                <td>${activity.endDate} <button type="button" class="btn btn-sm btn-icon p-0" onclick="showHistory('${activity.id}')"><i class='bx bx-time'></i></button></td>
+                <td><span class="badge bg-label-primary me-1">${activity.status}</span></td>
+                <td>${activity.responsibility}</td>
+                <td>
+                    <div class="dropdown">
+                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bx bx-dots-vertical-rounded"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="javascript:void(0);" onclick="handleEdit(${index})">
+                                <i class="bx bx-edit-alt me-1"></i> Edit
+                            </a>
+                        </div>
+                    </div>   
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+
+    // Function to render responsibility list in the modal
+    function renderResponsibilityList() {
+        const responsibilityListDiv = document.getElementById('responsibility-list');
+        responsibilityListDiv.innerHTML = ''; // Clear existing items
+
+        responsibilities.forEach((person, index) => {
+            const row = document.createElement('div');
+            row.classList.add('row', 'mb-2', 'align-items-center');
+            row.innerHTML = `
+                <div class="col-6">${person.name}</div>
+                <div class="col-3 text-center">
+                    <div class="form-check d-inline-block">
+                        <input class="form-check-input" type="radio" name="primaryResponsibility" id="primary-${index}" ${person.primary ? 'checked' : ''}>
+                    </div>
+                </div>
+                <div class="col-3 text-center">
+                    <div class="form-check d-inline-block">
+                        <input class="form-check-input" type="checkbox" id="secondary-${index}" ${person.secondary ? 'checked' : ''}>
+                    </div>
+                </div>
+            `;
+            responsibilityListDiv.appendChild(row);
+        });
+    }
+
+    // Function to show the date history modal
+    function showHistory(activityId) {
+        const historyTableBody = document.getElementById('history-table-body');
+        historyTableBody.innerHTML = ''; // Clear existing history
+
+        const history = dateHistoryData[activityId] || [];
+
+        if (history.length > 0) {
+            history.forEach(entry => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td><strong>${activity.id}</strong></td>
-                    <td>${activity.name}</td>
-                    <td>${activity.startDate} <i class='bx bx-time'></i></td>
-                    <td>${activity.endDate} <i class='bx bx-time'></i></td>
-                    <td><span class="badge bg-label-primary me-1">${activity.status}</span></td>
-                    <td>${activity.responsibility}</td>
-                    <td>
-                        <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="handleEdit(${index})">
-                                    <i class="bx bx-edit-alt me-1"></i> Edit
-                                </a>
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="handleDelete(${index})">
-                                    <i class="bx bx-trash me-1"></i> Delete
-                                </a>
-                            </div>
-                        </div>
-                    </td>
+                    <td>${entry.type}</td>
+                    <td>${entry.startDate}</td>
+                    <td>${entry.endDate}</td>
                 `;
-                tableBody.appendChild(row);
+                historyTableBody.appendChild(row);
             });
+        } else {
+            historyTableBody.innerHTML = '<tr><td colspan="3" class="text-center">No history available</td></tr>';
         }
+        
+        const historyModal = new bootstrap.Modal(document.getElementById('historyModal'));
+        historyModal.show();
+    }
 
-        // Function to render responsibility list in the modal
-        function renderResponsibilityList() {
-            const responsibilityListDiv = document.getElementById('responsibility-list');
-            responsibilityListDiv.innerHTML = ''; // Clear existing items
 
-            responsibilities.forEach((person, index) => {
-                const row = document.createElement('div');
-                row.classList.add('row', 'mb-2', 'align-items-center');
-                row.innerHTML = `
-                    <div class="col-6">${person.name}</div>
-                    <div class="col-3 text-center">
-                        <div class="form-check d-inline-block">
-                            <input class="form-check-input" type="radio" name="primaryResponsibility" id="primary-${index}" ${person.primary ? 'checked' : ''}>
-                        </div>
-                    </div>
-                    <div class="col-3 text-center">
-                        <div class="form-check d-inline-block">
-                            <input class="form-check-input" type="checkbox" id="secondary-${index}" ${person.secondary ? 'checked' : ''}>
-                        </div>
-                    </div>
-                `;
-                responsibilityListDiv.appendChild(row);
-            });
+    // Handle Edit action (placeholder)
+    function handleEdit(index) {
+        alert(`Edit action for activity: ${activities[index].name}`);
+        // In a real application, you would navigate to an edit page or open a modal
+    }
+
+    // Handle Delete action (placeholder)
+    function handleDelete(index) {
+        if (confirm(`Are you sure you want to delete activity: ${activities[index].name}?`)) {
+            // In a real application, you would send a delete request to the server
+            activities.splice(index, 1); // Remove from dummy data
+            renderTableRows(); // Re-render table
         }
+    }
 
-
-        // Handle Edit action (placeholder)
-        function handleEdit(index) {
-            alert(`Edit action for activity: ${activities[index].name}`);
-            // In a real application, you would navigate to an edit page or open a modal
-        }
-
-        // Handle Delete action (placeholder)
-        function handleDelete(index) {
-            if (confirm(`Are you sure you want to delete activity: ${activities[index].name}?`)) {
-                // In a real application, you would send a delete request to the server
-                activities.splice(index, 1); // Remove from dummy data
-                renderTableRows(); // Re-render table
-            }
-        }
-
-        // Initial render of table rows and responsibility list when the DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            renderTableRows();
-            renderResponsibilityList();
-        });
-    </script>
+    // Initial render of table rows and responsibility list when the DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        renderTableRows();
+        renderResponsibilityList();
+    });
+</script>
 </body>
 
 </html>

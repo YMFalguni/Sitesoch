@@ -1,279 +1,474 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-navbar-fixed" data-theme="theme-default">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
+    data-template="vertical-menu-template-free">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Time Sheet Manager</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Timesheet Manager | Sitesoch</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <style>
+        .app-brand-text {
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        .card-body.form-card-body {
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
 
-  <style>
-    body {
-      font-family: 'Public Sans', sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      color: #4e4e4e;
-      font-weight: 300;
-    }
+        .form-row-mb {
+            margin-bottom: 1rem !important;
+        }
 
-    .card {
-      margin: 30px;
-      border: 1px solid #e0e0e0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-    }
+        .form-row-mb-last {
+            margin-bottom: 1.5rem !important;
+        }
 
-    .card-header h4 {
-      margin: 0;
-      font-weight: 400;
-      color: #333;
-    }
+        .card-header.form-header {
+            padding-bottom: 0.75rem !important;
+        }
 
-    .btn-primary {
-      background-color: #696cff;
-      border-color: #696cff;
-      font-weight: 400;
-    }
+        .tab-content .tab-pane {
+            margin-top: 0 !important;
+        }
 
-    .table thead th {
-      background-color: #f1f2f6;
-      font-weight: 400;
-      color: #555;
-    }
+        .table-card {
+            padding: 1rem !important;
+            margin-top: 1rem !important;
+            margin-bottom: 1rem !important;
+        }
 
-    .table td {
-      font-weight: 300;
-      color: #555;
-    }
+        .inactive-input {
+            background-color: #e9ecef !important;
+            pointer-events: none;
+        }
 
-    .action-icons i {
-      font-size: 18px;
-      margin-right: 8px;
-      cursor: pointer;
-      color: #555;
-    }
+        .modal-header-custom {
+            background-color: #F8F9FA;
+            border-bottom: 1px solid #dee2e6;
+        }
 
-    .badge-status {
-      background-color: #e7f3ff;
-      color: #0056b3;
-      padding: 4px 8px;
-      font-size: 12px;
-      border-radius: 5px;
-      font-weight: 400;
-    }
-  </style>
+        .modal-footer-custom {
+            background-color: #F8F9FA;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .cancel-button-red {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            color: white !important;
+        }
+
+        .cancel-button-red:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        .form-check-input:checked {
+            background-color: #696cff;
+            border-color: #696cff;
+        }
+
+        .form-check-input:checked[type="checkbox"] {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .form-check-input {
+            border-color: grey;
+        }
+
+        .table-filter-input {
+            width: 220px;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .badge-status {
+            background-color: #e7f3ff;
+            color: #0056b3;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 5px;
+            font-weight: 400;
+        }
+        .action-icons .dropdown-menu {
+    min-width: 120px;
+}
+
+    </style>
 </head>
+
 <body>
-  <div class="container-fluid">
-    <div class="card">
-      <div class="card-header d-flex justify-content-between align-items-center">
-        <h4 class="mb-0">Time Sheet Manager</h4>
-        <button class="btn btn-primary" id="createBtn">CREATE TIMESHEET</button>
-      </div>
-      <div class="card-body">
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Sr No</th>
-              <th>Month And Year</th>
-              <th>Reported By</th>
-              <th>Repetition Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td><td>05, 2025</td><td></td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>5</td><td>05, 2025</td><td></td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>6</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>7</td><td>05, 2025</td><td></td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>8</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>9</td><td>05, 2025</td><td></td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>10</td><td>05, 2025</td><td></td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
-              <td class="action-icons">
-                <i class='bx bx-show' onclick="viewRow(this)"></i>
-                <i class='bx bx-edit' onclick="editRow(this)"></i>
-                <i class='bx bx-trash' onclick="deleteRow(this)"></i>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="#" class="app-brand-link">
+                        <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+                        <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item "><a href="Dashboard.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-cog"></i>
+                            <div>System Admin</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a>
+                            </li>
+                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+                            <li class="menu-item "><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        
+                             <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div>Project</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item "><a href="Manage-Project.html" class="menu-link">Project Management</a>
+                            </li>
+                            <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project Activities</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item active"><a href="project.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+
+                   <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
+                                class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a>
+                       
+                    </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <div class="layout-page">
+                <nav
+                    class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                    id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
+                    </div>
+                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item d-flex align-items-center">
+                                <i class="bx bx-search fs-4 lh-0"></i>
+                                <input
+                                    type="text"
+                                    class="form-control border-0 shadow-none"
+                                    placeholder="Search..."
+                                    aria-label="Search..."
+                                />
+                            </div>
+                        </div>
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-semibold d-block">John Doe</span>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                 
+                                    <li>
+                                        <a class="dropdown-item" href="My_Profile.html">
+                                            <i class="bx bx-user me-2"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                            <i class="bx bx-power-off me-2"></i>
+                                            <span class="align-middle">Log Out</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                         <h4 class="fw-bold py-2 mb-4"><span class="text-muted fw-light"></span></h4>
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Timesheets</h5>
+                                <button class="btn btn-primary" id="createBtn">CREATE TIMESHEET</button>
+                            </div>
+                            <div class="card-body">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr No</th>
+                                            <th>Month And Year</th>
+                                            <th>Reported By</th>
+                                            <th>Repetition Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                           <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
   </div>
+</td>
 
-  <!-- VIEW MODAL -->
-  <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="viewModalLabel">View Timesheet</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p><strong>Month And Year:</strong> <span id="viewMonthYear"></span></p>
-          <p><strong>Reported By:</strong> <span id="viewReportedBy"></span></p>
-          <p><strong>Repetition Date:</strong> <span id="viewRepetitionDate"></span></p>
-          <p><strong>Status:</strong> <span id="viewStatus"></span></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                          <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
   </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                          <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-  <!-- EDIT MODAL -->
-  <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit Timesheet</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="editForm">
-            <div class="mb-3">
-              <label class="form-label">Month And Year</label>
-              <input type="text" class="form-control" id="editMonthYear">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Reported By</label>
-              <input type="text" class="form-control" id="editReportedBy">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Repetition Date</label>
-              <input type="text" class="form-control" id="editRepetitionDate">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Status</label>
-              <input type="text" class="form-control" id="editStatus">
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" onclick="saveChanges()">Save changes</button>
-        </div>
-      </div>
-    </div>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
   </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                          <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                           <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-  <script>
-    let selectedRow = null;
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                             <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-    document.getElementById("createBtn").addEventListener("click", function () {
-      window.location.href = "Timesheet.html"; // Redirect target page
-    });
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                            <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-    function editRow(icon) {
-      selectedRow = icon.closest('tr');
-      const cells = selectedRow.querySelectorAll('td');
-      document.getElementById('editMonthYear').value = cells[1].textContent;
-      document.getElementById('editReportedBy').value = cells[2].textContent;
-      document.getElementById('editRepetitionDate').value = cells[3].textContent;
-      document.getElementById('editStatus').value = cells[4].textContent;
-      new bootstrap.Modal(document.getElementById('editModal')).show();
-    }
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                           <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-    function saveChanges() {
-      if (selectedRow) {
-        const cells = selectedRow.querySelectorAll('td');
-        cells[1].textContent = document.getElementById('editMonthYear').value;
-        cells[2].textContent = document.getElementById('editReportedBy').value;
-        cells[3].textContent = document.getElementById('editRepetitionDate').value;
-        cells[4].innerHTML = `<span class="badge-status">${document.getElementById('editStatus').value}</span>`;
-        bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
-      }
-    }
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                             <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-    function viewRow(icon) {
-      const row = icon.closest('tr');
-      const cells = row.querySelectorAll('td');
-      document.getElementById('viewMonthYear').textContent = cells[1].textContent;
-      document.getElementById('viewReportedBy').textContent = cells[2].textContent;
-      document.getElementById('viewRepetitionDate').textContent = cells[3].textContent;
-      document.getElementById('viewStatus').textContent = cells[4].textContent;
-      new bootstrap.Modal(document.getElementById('viewModal')).show();
-    }
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td><td>05, 2025</td><td>Yogita Acharya</td><td>21/04/2025</td><td><span class="badge-status">SUBMITTED</span></td>
+                                            <td class="action-icons">
+  <div class="dropdown">
+   <button class="btn btn-sm btn-light" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
 
-    function deleteRow(icon) {
-      const row = icon.closest('tr');
-      if (confirm("Are you sure you want to delete this timesheet?")) {
-        row.remove();
-      }
-    }
-  </script>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#" onclick="viewRow(this)">View</a></li>
+      <li><a class="dropdown-item" href="#" onclick="editRow(this)">Edit</a></li>
+      <li><a class="dropdown-item text-danger" href="#" onclick="deleteRow(this)">Delete</a></li>
+    </ul>
+  </div>
+</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="content-footer footer bg-footer-theme">
+                        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">
+                                © <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                , made with ❤️ by <a href="https://Sitesoch.com" target="_blank"
+                                    class="footer-link fw-bolder">Sitesoch</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <div class="content-backdrop fade"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedRow = null;
+
+        document.getElementById("createBtn").addEventListener("click", function () {
+            window.location.href = "Timesheet.html";
+        });
+
+        function viewRow(icon) {
+            const row = icon.closest('tr');
+            const cells = row.querySelectorAll('td');
+            alert("Viewing:\nMonth: " + cells[1].textContent + "\nReported By: " + cells[2].textContent);
+        }
+
+        function editRow(icon) {
+            selectedRow = icon.closest('tr');
+            alert("Edit functionality here (show modal)");
+        }
+
+        function deleteRow(icon) {
+            if (confirm("Are you sure to delete this row?")) {
+                icon.closest('tr').remove();
+            }
+        }
+    </script>
 </body>
+
 </html>
