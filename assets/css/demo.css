@@ -204,9 +204,9 @@
       background-color: #0056b3;
       border-color: #0056b3;
     }
-    .breadcrumb {
+    /* .breadcrumb {
       margin-top: 1rem;
-    }
+    } */
     #customSearchInput {
       width: 250px;
     }
@@ -223,7 +223,7 @@
         }
 
       
-        .breadcrumb {
+        /* .breadcrumb {
             background-color: transparent; 
             padding: 0; 
             margin-bottom: 1.5rem; 
@@ -244,7 +244,7 @@
             color: #566a7f; 
             font-weight: 600; 
         }
-       
+        */
 
         .card {
             border: 1px solid #e7e7e8;

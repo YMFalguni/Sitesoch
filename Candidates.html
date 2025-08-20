@@ -25,7 +25,7 @@
       border-radius: 12px;
       padding: 1rem;
       box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
-      border: 1px solid #ddd;
+      
     }
 
     /* Candidate name */
@@ -135,7 +135,7 @@
 
     /* Actions cell */
     .actions-cell {
-      text-align: right;
+      text-align: center;
       white-space: nowrap;
       width: 1%;
       padding-right: 1rem;
@@ -199,11 +199,11 @@
 <body>
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
-      <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+     <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
           <a href="#" class="app-brand-link">
-            <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20" alt="Sitesoch logo">
-            <p style="font-size: 18px; font-weight: 500; margin-top: 20px; display:inline-block; margin-left:8px">Sitesoch</p>
+            <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+            <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
           </a>
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
             <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -211,50 +211,48 @@
         </div>
         <div class="menu-inner-shadow"></div>
         <ul class="menu-inner py-1">
-          <li class="menu-item"><a href="index.html" class="menu-link"><i
+          <li class="menu-item "><a href="index.html" class="menu-link"><i
                 class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
-          <li class="menu-item ">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <li class="menu-item active open ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle active">
               <i class="menu-icon tf-icons bx bx-cog"></i>
               <div>System Admin</div>
             </a>
-            <ul class="menu-sub">
+            <ul class="menu-sub ">
               <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a></li>
               <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
               <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
               <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
             </ul>
           </li>
+          <li class="menu-item active open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-task"></i>
+              <div>Project</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item"><a href="Manage-Project.html" class="menu-link">Project Management</a>
+              </li>
+              <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project Activities</a></li>
+
+            </ul>
           </li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        
-                             <i class="menu-icon tf-icons bx bx-task"></i>
-                            <div>Project</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item "><a href="Manage-Project.html" class="menu-link">Project Management</a>
-                            </li>
-                            <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project Activities</a></li>
-                        </ul>
-                    </li>
-          <li class="menu-item"><a href="project.html" class="menu-link"><i
+         <li class="menu-item"><a href="project.html" class="menu-link"><i
                 class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
           <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
-                class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
-          
-        
-<li class="menu-item active open">
+             class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+             <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle active">
               <i class="menu-icon tf-icons bx bx-task"></i>
               <div>Recruitment</div>
             </a>
-            <ul class="menu-sub ">
+            <ul class="menu-sub">
               <li class="menu-item"><a href="Job-Position.html" class="menu-link">Job Position</a>
               </li>
-              <li class="menu-item active"><a href="Candidate.html" class="menu-link">Candidates</a></li>
-            </ul>
-            </aside>
+              <li class="menu-item active"><a href="Candidates.html" class="menu-link">Candidates</a></li>
+        </ul>
+        </li>
+      </aside>
 
       <div class="layout-page">
         
@@ -397,19 +395,19 @@
                   <table class="table table-bordered table-hover table-striped">
                   <thead>
                     <tr>
-                      <th style="width:40px;"><input type="checkbox" id="select-all"></th>
+                      
                       <th>candidates</th>
                       <th onclick="sortTable(2)" style="cursor:pointer;">
                         matches to job post <span class="text-muted" title="Click to sort">&#9432;</span>
                       </th>
                       <th>activity</th>
-                      <th>interest</th>
-                      <th class="actions-cell"></th>
+                      
+                      <th>action</th>
                       </tr>
                   </thead>
                   <tbody id="candidate-body">
                     <tr>
-                      <td><input type="checkbox" class="row-checkbox"></td>
+                      
                       <td><a href="#" class="candidate-name">AJAY WATPADE</a></td>
                       <td>
                         <span class="badge-custom">SQL</span>
@@ -420,13 +418,7 @@
                         <strong>Applied over 3 months ago</strong><br>
                         <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
                       </td>
-                      <td>
-                        <div class="btn-group interest-group" role="group" aria-label="Interest Buttons">
-                          <button type="button" class="btn btn-yes" title="Yes">✔</button>
-                          <button type="button" class="btn btn-maybe" title="Maybe">?</button>
-                          <button type="button" class="btn btn-no" title="No">✖</button>
-                        </div>
-                      </td>
+                    
                       <td class="actions-cell">
                         <div class="dropdown">
                           <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -443,7 +435,7 @@
                     </tr>
 
                     <tr>
-                      <td><input type="checkbox" class="row-checkbox"></td>
+                      
                       <td><a href="#" class="candidate-name">NILAM SURVE</a></td>
                       <td>
                         <span class="badge-custom">SQL</span>
@@ -454,13 +446,7 @@
                         <strong>Applied over 3 months ago</strong><br>
                         <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
                       </td>
-                      <td>
-                        <div class="btn-group interest-group" role="group" aria-label="Interest Buttons">
-                          <button type="button" class="btn btn-yes" title="Yes">✔</button>
-                          <button type="button" class="btn btn-maybe" title="Maybe">?</button>
-                          <button type="button" class="btn btn-no" title="No">✖</button>
-                        </div>
-                      </td>
+                      
                       <td class="actions-cell">
                         <div class="dropdown">
                           <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -478,25 +464,11 @@
                   </tbody>
                 </table>
 
-                <div class="d-flex justify-content-between align-items-center mt-3">
-                  <div class="pagination-wrapper w-100 text-center">
-                    <nav>
-                      <ul class="pagination mb-0">
-                        <li class="page-item"><a class="page-link" href="#">← Prev</a></li>
-                      </ul>
-                    </nav>
-                    <div class="pager-center"><small class="text-muted">Showing 1-2 of 2</small></div>
-                    <nav>
-                      <ul class="pagination mb-0">
-                        <li class="page-item"><a class="page-link" href="#">Next →</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                  <a href="Add-Candidate.html" class="btn btn-primary d-flex align-items-center">
-                      <i class="bx bx-plus me-2"></i>  Add Candidate
+                <div class="d-flex justify-content-end align-items-center mt-3">
+                  <a href="Add-Candidate.html" class="btn btn-primary d-flex align-items-end">
+                      <i class="bx bx-plus me-2"></i> Add Candidate
                   </a>
                 </div>
-                
               </div>
             </div>
           </div>

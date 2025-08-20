@@ -18,71 +18,66 @@
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <script src="../assets/vendor/js/helpers.js"></script>
     <script src="../assets/js/config.js"></script>
+    <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
 </head>
 
 <body>
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-                <div class="app-brand demo">
-                    <a href="#" class="app-brand-link">
-                        <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20" alt="Sitesoch Logo">
-                        <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
-                    </a>
-                    <a href="javascript:void(0);"
-                        class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
-                    </a>
-                </div>
-                <div class="menu-inner-shadow"></div>
-                <ul class="menu-inner py-1">
-                    <li class="menu-item"><a href="index.html" class="menu-link"><i
-                                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-cog"></i>
-                            <div>System Admin</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization
-                                    Master</a>
-                            </li>
-                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
-                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
-                            <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
-                        </ul>
-                    </li>
+          <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+        <div class="app-brand demo">
+          <a href="#" class="app-brand-link">
+            <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+            <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+          </a>
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm align-middle"></i>
+          </a>
+        </div>
+        <div class="menu-inner-shadow"></div>
+        <ul class="menu-inner py-1">
+          <li class="menu-item "><a href="index.html" class="menu-link"><i
+                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+          <li class="menu-item active open ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle active">
+              <i class="menu-icon tf-icons bx bx-cog"></i>
+              <div>System Admin</div>
+            </a>
+            <ul class="menu-sub ">
+              <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a></li>
+              <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+              <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+              <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+            </ul>
+          </li>
+          <li class="menu-item active open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class="menu-icon tf-icons bx bx-task"></i>
+              <div>Project</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item"><a href="Manage-Project.html" class="menu-link">Project Management</a>
+              </li>
+              <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project Activities</a></li>
 
-                    <li class="menu-item">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            <i class="menu-icon tf-icons bx bx-task"></i>
-                            <div>Project</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item"><a href="Manage-Project.html" class="menu-link">Project Management</a>
-                            </li>
-                            <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project
-                                    Activities</a></li>
-
-                        </ul>
-                    </li>
-                    <li class="menu-item"><a href="project.html" class="menu-link"><i
-                                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
-                    <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
-                                class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
-
-                    <li class="menu-item active open">
-                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
-                            <i class="menu-icon tf-icons bx bx-briefcase"></i> <div>Recruitment</div>
-                        </a>
-                        <ul class="menu-sub">
-                            <li class="menu-item active"><a href="Job-Position.html" class="menu-link">Job Position</a>
-                            </li>
-                            <li class="menu-item"><a href="Candidates.html" class="menu-link">Candidates</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </aside>
+            </ul>
+          </li>
+         <li class="menu-item"><a href="project.html" class="menu-link"><i
+                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+          <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
+             class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+             <li class="menu-item active open">
+            <a href="javascript:void(0);" class="menu-link menu-toggle active">
+              <i class="menu-icon tf-icons bx bx-task"></i>
+              <div>Recruitment</div>
+            </a>
+            <ul class="menu-sub">
+              <li class="menu-item active"><a href="Job-Position.html" class="menu-link">Job Position</a>
+              </li>
+              <li class="menu-item"><a href="Candidates.html" class="menu-link">Candidates</a></li>
+        </ul>
+        </li>
+      </aside>
             <div class="layout-page">
                 <nav
                     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -136,7 +131,7 @@
                                 <ol class="breadcrumb breadcrumb-custom-icon mb-0">
                                     <li class="breadcrumb-item"><a href="javascript:void(0);">Recruitment</a></li>
                                     <li class="breadcrumb-item"><a href="Job-Position.html">Job Position</a></li>
-                                    <li class="breadcrumb-item active"><a href="Add-Job.html">Add Jobs</a>
+                                    <li class="breadcrumb-item active font-weight:600;"><a href="Add-Job.html">Add Jobs</a>
                                 </ol>
                             </nav>
                         </div>
@@ -217,35 +212,13 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="jobDescription" class="form-label">Job description <span class="text-danger">*</span></label>
-                                    <div class="border rounded p-2">
-                                        <div class="d-flex mb-2">
-                                            <button type="button" class="btn btn-sm btn-outline-secondary me-1"><i class="bx bx-bold"></i></button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary me-1"><i class="bx bx-italic"></i></button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary me-1"><i class="bx bx-list-ul"></i></button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary me-auto"><i class="bx bx-list-ol"></i></button>
-                                            <button type="button" class="btn btn-sm btn-outline-secondary"><i class="bx bx-question-mark"></i></button>
-                                        </div>
-                                        <textarea class="form-control border-0" id="jobDescription" rows="10" placeholder="Enter job description">
-Our client is seeking for a skilled and experienced Laravel Developer with a strong background in SQL to join their dynamic development team. The ideal candidate will have a passion for web development, a deep understanding of Laravel framework, and a solid grasp of database management using SQL.
-
-Responsibilities:
-Laravel Development:
-* Design, develop, and maintain efficient, reusable, and reliable Laravel code.
-* Collaborate with the team to understand project requirements and deliver high-quality solutions.
-* Ensure the best possible performance, quality, and responsiveness of applications.
-
-Database Management:
-* Proficient in SQL database design, optimization, and maintenance.
-* Develop and maintain database schemas and queries to support application</textarea>
-                                    </div>
-
-                                    
-                                </div>
-                                
-                                
-                            </div>
+                               
+                                     <label for="job_description" class="form-label">Job Description</label> 
+                                <textarea name="editor1"></textarea>
+	<script>
+		CKEDITOR.replace( 'editor1' );
+	</script>
+                        </div>
                         </div>
                     
                     
@@ -263,16 +236,18 @@ Database Management:
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="numPeopleToHire" class="form-label">Number of people to hire in the next 30 days <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                        <button class="btn btn-outline-secondary" type="button" id="decrementPeople">-</button>
-                                        <input type="text" class="form-control text-center" id="numPeopleToHire" value="2" readonly>
-                                        <button class="btn btn-outline-secondary" type="button" id="incrementPeople">+</button>
-                                    </div>
+                              <div class="mb-3">
+    <label for="numPeopleToHire" class="form-label">Number of people to hire in the next 30 days <span class="text-danger">*</span></label>
+    <div class="input-group" style="width: 150px;"> <button type="button" class="btn btn-outline-secondary" id="minusBtn">-</button>
+        <input type="text" class="form-control text-center" id="numPeopleToHire" name="numPeopleToHire" value="2" min="0" required readonly>
+        <button type="button" class="btn btn-outline-secondary" id="plusBtn">+</button>
+    </div>
+</div>
+                                    
                                 </div>
                                 <div class="col-12 text-end mt-4">
                                     <a href="Job-Position.html" class="btn btn-outline-danger m-1">Cancel</a>
-                                    <button type="submit" class="btn btn-outline-primary m-1">Save changes</button>
+                                    <button type="submit" class="btn btn-outline-primary m-1">Submit</button>
                                 </div>
                             </div>
                         </div>
