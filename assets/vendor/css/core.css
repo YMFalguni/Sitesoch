@@ -45,7 +45,8 @@
   --bs-body-font-size: 0.9375rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.53;
-  --bs-body-color: #697a8d;
+  --bs-body-color: #5f61e6;
+  /* --bs-body-color: #697a8d; */
   --bs-body-bg: #f5f5f9;
 }
 
@@ -2001,6 +2002,9 @@ progress {
 
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-accent-bg: var(--bs-table-striped-bg);
+  color: var(--bs-table-striped-color);
+}
+.table-striped > tbody > tr:nth-of-type(even) > * {
   color: var(--bs-table-striped-color);
 }
 

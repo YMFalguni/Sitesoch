@@ -1,205 +1,243 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/"
-  data-template="vertical-menu-template-free">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-  <title>Sitesoch | Candidates</title>
-  <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
-  <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../assets/css/demo.css" />
-  <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Sitesoch | Candidates</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <style>
+        /* General styling for the Candidates card container */
+        .candidates-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+        }
 
-  <style>
-    /* Candidates card container */
-    .candidates-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
-      
-    }
+        /* Candidate name styling */
+        .candidate-name {
+            font-weight: 700;
+            color:  #697a8d;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            text-decoration: none;
+        }
 
-    /* Candidate name */
-    .candidate-name {
-      font-weight: 700;
-      color: #0066cc;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-      text-decoration: none;
-    }
+        .w-100 {
+            width: 78% !important;
+        }
 
-    .w-100 {
-    width: 78% !important;
-    }
+        /* Badges: vertical stack, no background, and blue text color */
+        .badge-custom {
+            display: block;
+            background-color: transparent;
+            color:  #697a8d;
+            border:  #697a8d;
+            border-radius: 12px;
+            padding: .25rem .5rem;
+            font-size: .85rem;
+            margin-bottom: .25rem;
+            font-weight: 700;
+            width: max-content;
+            max-width: 100%;
+            margin-top: .25rem;
+            cursor: pointer;
+        }
 
-    /* Badges: vertical stack */
-    .badge-custom {
-      display: flex;
-      align-items: center;
-      background-color: #e8f5e9;
-      color: #2e7d32;
-      border-radius: 12px;
-      padding: .25rem .5rem;
-      font-size: .85rem;
-      margin-bottom: .25rem;
-      font-weight: 700;
-      width: max-content;
-      max-width: 100%;
-    }
+        .badge-custom::before {
+            content: '✔ ';
+            color: #697a8d;
+            margin-right: .2rem;
+        }
 
-    .badge-custom::before {
-      content: '✔';
-      color: #2e7d32;
-      margin-right: 0.25rem;
-      font-weight: bold;
-    }
+        /* Interest buttons */
+        .interest-group .btn {
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
 
-    /* Interest buttons */
-    .interest-group .btn {
-      width: 36px;
-      height: 36px;
-      padding: 0;
-      font-size: 18px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-    }
+        .interest-group .btn:first-child {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
 
-    .interest-group .btn:first-child {
-      border-top-left-radius: 8px;
-      border-bottom-left-radius: 8px;
-    }
+        .interest-group .btn:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
 
-    .interest-group .btn:last-child {
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
-    }
+        .btn-yes {
+            background-color: #2e7d32;
+            color: #fff;
+            border-color: #2e7d32;
+        }
 
-    .btn-yes {
-      background-color: #2e7d32;
-      color: #fff;
-      border-color: #2e7d32;
-    }
+        .btn-maybe {
+            background-color: #f1f8e9;
+            color: #000;
+        }
 
-    .btn-maybe {
-      background-color: #f1f8e9;
-      color: #000;
-    }
+        /* No red for "No" */
+        .btn-no {
+            background-color: #f1f8e9;
+            color: #000;
+            border-color: rgba(0, 0, 0, 0.08);
+        }
 
-    /* No red for "No" */
-    .btn-no {
-      background-color: #f1f8e9;
-      color: #000;
-      border-color: rgba(0, 0, 0, 0.08);
-    }
+        /* Table tweaks */
+        .table {
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
 
-    /* Table tweaks */
-    .table {
-      border-collapse: collapse;
-      border: 1px solid #ddd;
-    }
-    .table thead th {
-      border-bottom: none;
-      vertical-align: middle;
-      
-      font-weight: 500;
-      font-size: 0.9rem;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: #555;
-      padding: 0.75rem 1rem;
-      text-transform: uppercase;
-      border-right: 1px solid #ddd;
-    }
-    .table thead th:last-child {
-      border-right: none;
-    }
-    .table td {
-      vertical-align: middle;
-      padding: 0.75rem 1rem;
-      border-right: 1px solid #ddd;
-    }
-    .table td:last-child {
-      border-right: none;
-    }
+        .table thead th {
+            border-bottom: none;
+            vertical-align: middle;
+            font-weight: 500;
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #555;
+            padding: 0.75rem 1rem;
+            text-transform: uppercase;
+            border-right: 1px solid #ddd;
+        }
 
-    /* Actions cell */
-    .actions-cell {
-      text-align: center;
-      white-space: nowrap;
-      width: 1%;
-      padding-right: 1rem;
-    }
+        .table thead th:last-child {
+            border-right: none;
+        }
 
-    .dropdown-toggle::after {
-      display: none;
-    }
+        .table td {
+            vertical-align: middle;
+            padding: 0.75rem 1rem;
+            border-right: 1px solid #ddd;
+        }
 
-    /* Pagination */
-    .pagination-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem 0;
-    }
+        .table td:last-child {
+            border-right: none;
+        }
 
-    .pagination-wrapper .pager-center {
-      margin: 0 1rem;
-    }
+        /* Actions cell */
+        .actions-cell {
+            text-align: center;
+            white-space: nowrap;
+            width: 1%;
+            padding-right: 1rem;
+        }
 
-    .pagination-wrapper nav {
-      display: inline-block;
-    }
+        .dropdown-toggle::after {
+            display: none;
+        }
 
-    .pagination-wrapper .pagination {
-      margin-bottom: 0;
-    }
+        /* Pagination tweaks */
+        .pagination-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            /* Align to the right */
+            align-items: center;
+            padding: 1rem 0;
+        }
 
-    @media (max-width: 768px) {
-      .badge-custom {
-        width: 100%;
-      }
+        .pagination-wrapper .pager-center {
+            margin: 0 1rem;
+        }
 
-      .actions-cell {
-        padding-right: 0.5rem;
-      }
+        .pagination-wrapper nav {
+            display: inline-block;
+        }
 
-      .table thead th,
-      .table td {
-        padding: 0.5rem;
-        font-size: 0.8rem;
-      }
+        .pagination-wrapper .pagination {
+            margin-bottom: 0;
+        }
 
-      .pagination-wrapper {
-        flex-direction: column;
-      }
-      
-      .pagination-wrapper .pager-center {
-        margin-top: 0.5rem;
-      }
+        /* "Add Candidate" button style and placement */
+        .add-candidate-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
 
-     
-    }
-  </style>
+        .add-candidate-btn-container .btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-  <script src="../assets/vendor/js/helpers.js"></script>
-  <script src="../assets/js/config.js"></script>
+        /* Custom context menu */
+        .custom-context-menu {
+            position: absolute;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            z-index: 1000;
+            display: none;
+        }
+
+        .custom-context-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+
+        .custom-context-menu li {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .custom-context-menu li:hover {
+            background-color: #f1f1f1;
+        }
+
+        @media (max-width: 768px) {
+            .badge-custom {
+                width: 100%;
+            }
+
+            .actions-cell {
+                padding-right: 0.5rem;
+            }
+
+            .table thead th,
+            .table td {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .pagination-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pagination-wrapper .pager-center {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+    <script src="../assets/vendor/js/helpers.js"></script>
+    <script src="../assets/js/config.js"></script>
 </head>
 
 <body>
-  <div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-     <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
           <a href="#" class="app-brand-link">
             <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
@@ -211,7 +249,7 @@
         </div>
         <div class="menu-inner-shadow"></div>
         <ul class="menu-inner py-1">
-          <li class="menu-item "><a href="index.html" class="menu-link"><i
+          <li class="menu-item"><a href="index.html" class="menu-link"><i
                 class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
           <li class="menu-item active open ">
             <a href="javascript:void(0);" class="menu-link menu-toggle active">
@@ -249,32 +287,25 @@
             <ul class="menu-sub">
               <li class="menu-item"><a href="Job-Position.html" class="menu-link">Job Position</a>
               </li>
-              <li class="menu-item active"><a href="Candidates.html" class="menu-link">Candidates</a></li>
+              <li class="menu-item active"><a href="Candidate.html" class="menu-link">Candidates</a></li>
         </ul>
         </li>
       </aside>
-
-      <div class="layout-page">
-        
-                <nav
-                    class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-                    id="layout-navbar">
+            <div class="layout-page">
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i
-                                class="bx bx-menu bx-sm"></i></a>
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)"><i class="bx bx-menu bx-sm"></i></a>
                     </div>
                     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                         <div class="navbar-nav align-items-center">
                             <div class="nav-item d-flex align-items-center">
                                 <i class="bx bx-search fs-4 lh-0"></i>
-                                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
-                                    aria-label="Search..." />
+                                <input type="text" class="form-control border-0 shadow-none" placeholder="Search..." aria-label="Search..." />
                             </div>
                         </div>
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
-                                    data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
                                         <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
@@ -285,8 +316,7 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-3">
                                                     <div class="avatar avatar-online">
-                                                        <img src="../assets/img/avatars/1.png" alt
-                                                            class="w-px-40 h-auto rounded-circle" />
+                                                        <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
@@ -297,7 +327,6 @@
                                         </a>
                                     </li>
                                     <li>
-
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="My_Profile.html">
@@ -305,9 +334,7 @@
                                             <span class="align-middle">My Profile</span>
                                         </a>
                                     </li>
-
                                     <li>
-
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="auth-login-basic.html">
@@ -317,25 +344,25 @@
                                     </li>
                                 </ul>
                             </li>
-                            </ul>
+                        </ul>
                     </div>
                 </nav>
-      <div class="content-wrapper">
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <div class="p-3">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb breadcrumb-custom-icon mb-0">
-                  <li class="breadcrumb-item"><a href="javascript:void(0);">Recruitment</a></li>
-                  <li class="breadcrumb-item active"><a href="javascript:void(0);">Candidate</a></li>
-                </ol>
-              </nav>
-            </div>
-                   <div class="row g-4">
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="p-3">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb breadcrumb-custom-icon mb-0">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0);">Recruitment</a></li>
+                                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Candidate</a></li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="row g-4">
                             <div class="col-md-3">
                                 <div class="card shadow-sm border-0">
                                     <div class="card-body d-flex align-items-center">
                                         <div class="me-3">
-                                          <i class="bx bx-group text-primary fs-2"></i>
+                                            <i class="bx bx-group text-primary fs-2"></i>
                                         </div>
                                         <div>
                                             <h6 class="text-muted mb-1">Total Candidate</h6>
@@ -384,150 +411,188 @@
                                 </div>
                             </div>
                         </div>
-        
-
-            <div class="candidates-card mt-3">
-              <div class="card-header d-flex align-items-center justify-content-between">
-                                <h5 class="mb-0">candidate </h5>
-                         </div>
-              <div class="container-fluid p-0">
-                <table class="table align-middle mb-0">
-                  <table class="table table-bordered table-hover table-striped">
-                  <thead>
-                    <tr>
-                      
-                      <th>candidates</th>
-                      <th onclick="sortTable(2)" style="cursor:pointer;">
-                        matches to job post <span class="text-muted" title="Click to sort">&#9432;</span>
-                      </th>
-                      <th>activity</th>
-                      
-                      <th>action</th>
-                      </tr>
-                  </thead>
-                  <tbody id="candidate-body">
-                    <tr>
-                      
-                      <td><a href="#" class="candidate-name">AJAY WATPADE</a></td>
-                      <td>
-                        <span class="badge-custom">SQL</span>
-                        <span class="badge-custom">Software development</span>
-                        <span class="badge-custom">HTML</span>
-                      </td>
-                      <td>
-                        <strong>Applied over 3 months ago</strong><br>
-                        <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
-                      </td>
-                    
-                      <td class="actions-cell">
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            aria-label="More">
-                            <i class="bx bx-dots-horizontal-rounded fs-4"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i> View Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-2"></i> Edit</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bx bx-archive-in me-2"></i> Archive</a></li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      
-                      <td><a href="#" class="candidate-name">NILAM SURVE</a></td>
-                      <td>
-                        <span class="badge-custom">SQL</span>
-                        <span class="badge-custom">Web development</span>
-                        <span class="badge-custom">Laravel</span>
-                      </td>
-                      <td>
-                        <strong>Applied over 3 months ago</strong><br>
-                        <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
-                      </td>
-                      
-                      <td class="actions-cell">
-                        <div class="dropdown">
-                          <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            aria-label="More">
-                            <i class="bx bx-dots-horizontal-rounded fs-4"></i>
-                          </button>
-                          <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i> View Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-2"></i> Edit</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="bx bx-archive-in me-2"></i> Archive</a></li>
-                          </ul>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div class="d-flex justify-content-end align-items-center mt-3">
-                  <a href="Add-Candidate.html" class="btn btn-primary d-flex align-items-end">
-                      <i class="bx bx-plus me-2"></i> Add Candidate
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <footer class="content-footer footer bg-footer-theme mt-4">
-            <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-              <div class="mb-2 mb-md-0">©
-                <script>document.write(new Date().getFullYear());</script>, made with ❤️ by
-                <a href="#" class="footer-link fw-bolder">Sitesoch Intern Team</a>
-              </div>
-            </div>
-          </footer>
-
-          <div class="content-backdrop fade"></div>
-        </div>
-      </div>
-    </div>
+                        <div class="candidates-card mt-3">
+                            <div class="card-header border-bottom">
+  <div class="row">
+    <h5 class="card-title col-md-12">Candidate</h5>
   </div>
+  <hr class="my-3" style="margin-left:-2rem; margin-right:-2rem;" />
+</div>
 
-  <div class="layout-overlay layout-menu-toggle"></div>
+                            <div class="container-fluid p-0">
+                                <table class="table table-bordered table-hover table-striped align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr.No</th>
+                                            <th>Candidates</th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer;">
+                                                Matches to Job Post <span class="text-muted" title="Click to sort">&#9432;</span>
+                                            </th>
+                                            <th>Activity</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="candidate-body" class="table-border-bottom-0">
+                                        <tr>
+                                            <td></td>
+                                            <td><a href="#" class="candidate-name">AJAY WATPADE</a></td>
+                                            <td>
+                                                <span class="badge-custom">SQL</span>
+                                                <span class="badge-custom">Software development</span>
+                                                <span class="badge-custom">HTML</span>
+                                            </td>
+                                            <td>
+                                                <strong>Applied over 3 months ago</strong><br>
+                                                <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
+                                            </td>
+                                            <td class="actions-cell">
+                                                <div class="dropdown">
+                                                    <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
+                                                        <i class="bx bx-dots-horizontal-rounded fs-4"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i> View Profile</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-2"></i> Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="bx bx-archive-in me-2"></i> Archive</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><a href="#" class="candidate-name">NILAM SURVE</a></td>
+                                            <td>
+                                                <span class="badge-custom">SQL</span>
+                                                <span class="badge-custom">Web development</span>
+                                                <span class="badge-custom">Laravel</span>
+                                            </td>
+                                            <td>
+                                                <strong>Applied over 3 months ago</strong><br>
+                                                <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
+                                            </td>
+                                            <td class="actions-cell">
+                                                <div class="dropdown">
+                                                    <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
+                                                        <i class="bx bx-dots-horizontal-rounded fs-4"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end">
+                                                        <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i> View Profile</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="bx bx-edit-alt me-2"></i> Edit</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="bx bx-archive-in me-2"></i> Archive</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="add-candidate-btn-container">
+                                <a class="btn add-new btn-primary" href="Add-Candidate.html" type="button"><span><i class="icon-base bx bx-plus icon-sm me-0 me-sm-2"></i><span class="d-none d-sm-inline-block">Add Candidate</span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="content-footer footer bg-footer-theme mt-4">
+                        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                            <div class="mb-2 mb-md-0">©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>, made with ❤️ by
+                                <a href="#" class="footer-link fw-bolder">Sitesoch Intern Team</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <div class="content-backdrop fade"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout-overlay layout-menu-toggle"></div>
+    <div id="badge-context-menu" class="custom-context-menu">
+        <ul>
+            <li class="copy-text">Copy Text</li>
+            <li class="open-link">Open Link (Example)</li>
+        </ul>
+    </div>
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../assets/vendor/js/menu.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to number the table rows
+            function addSrNo() {
+                const rows = document.getElementById('candidate-body').querySelectorAll('tr');
+                rows.forEach((row, index) => {
+                    row.cells[0].innerText = index + 1;
+                });
+            }
+            // Sort table function
+            function sortTable(colIndex) {
+                const tbody = document.getElementById('candidate-body');
+                if (!tbody) return;
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                const asc = !tbody.dataset.asc || tbody.dataset.asc === 'false';
+                rows.sort((a, b) => {
+                    const aText = Array.from(a.cells[colIndex].querySelectorAll('.badge-custom'))
+                        .map(el => el.innerText).join(' ').toLowerCase();
+                    const bText = Array.from(b.cells[colIndex].querySelectorAll('.badge-custom'))
+                        .map(el => el.innerText).join(' ').toLowerCase();
+                    return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
+                });
+                rows.forEach(r => tbody.appendChild(r));
+                tbody.dataset.asc = asc;
+                addSrNo(); // Re-number the rows after sorting
+            }
+            // Initial numbering and event listener setup
+            addSrNo();
+            // Add a global sortTable function so it can be called from the onclick attribute
+            window.sortTable = sortTable;
 
-  <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-  <script src="../assets/vendor/libs/popper/popper.js"></script>
-  <script src="../assets/vendor/js/bootstrap.js"></script>
-  <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  <script src="../assets/vendor/js/menu.js"></script>
-  <script src="../assets/js/main.js"></script>
+            const badges = document.querySelectorAll('.badge-custom');
+            const contextMenu = document.getElementById('badge-context-menu');
+            let clickedBadge = null;
 
-  <script>
-    // Select-all feature
-    document.addEventListener('DOMContentLoaded', function () {
-      const selectAll = document.getElementById('select-all');
-      if (selectAll) {
-        selectAll.addEventListener('change', function () {
-          document.querySelectorAll('.row-checkbox').forEach(cb => cb.checked = selectAll.checked);
+            badges.forEach(badge => {
+                badge.addEventListener('contextmenu', (e) => {
+                    e.preventDefault(); // Prevent the default browser context menu
+                    clickedBadge = badge; // Store the badge that was clicked
+                    contextMenu.style.display = 'block';
+                    contextMenu.style.left = `${e.pageX}px`;
+                    contextMenu.style.top = `${e.pageY}px`;
+                });
+            });
+
+            // Hide the custom menu when clicking anywhere else
+            document.addEventListener('click', () => {
+                contextMenu.style.display = 'none';
+            });
+
+            // Handle menu item clicks
+            contextMenu.querySelector('.copy-text').addEventListener('click', () => {
+                if (clickedBadge) {
+                    navigator.clipboard.writeText(clickedBadge.textContent.trim())
+                        .then(() => {
+                            console.log('Text copied to clipboard!');
+                            alert(`'${clickedBadge.textContent.trim()}' copied to clipboard!`);
+                        })
+                        .catch(err => {
+                            console.error('Failed to copy text: ', err);
+                        });
+                }
+            });
+
+            contextMenu.querySelector('.open-link').addEventListener('click', () => {
+                if (clickedBadge) {
+                    // This is an example, replace with actual logic
+                    alert(`Simulating opening link for: ${clickedBadge.textContent.trim()}`);
+                    window.open(`https://www.google.com/search?q=${clickedBadge.textContent.trim()}`, '_blank');
+                }
+            });
         });
-      }
-      // initialize sorting by column 2
-      sortTable(2);
-    });
-
-    function sortTable(colIndex) {
-      const tbody = document.getElementById('candidate-body');
-      if (!tbody) return;
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-      const asc = !tbody.dataset.asc || tbody.dataset.asc === 'false';
-      rows.sort((a, b) => {
-        const aText = Array.from(a.cells[colIndex].querySelectorAll('.badge-custom'))
-          .map(el => el.innerText).join(' ').toLowerCase();
-        const bText = Array.from(b.cells[colIndex].querySelectorAll('.badge-custom'))
-          .map(el => el.innerText).join(' ').toLowerCase();
-        return asc ? aText.localeCompare(bText) : bText.localeCompare(aText);
-      });
-      rows.forEach(r => tbody.appendChild(r));
-      tbody.dataset.asc = asc;
-    }
-  </script>
-
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
+    </script>
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
