@@ -25,8 +25,8 @@
 
         /* Candidate name styling */
         .candidate-name {
-            font-weight: 700;
-            color:  #697a8d;
+            font-weight: normal; /* Updated from 700 to normal */
+            color: #697a8d;
             text-transform: uppercase;
             letter-spacing: 0.2px;
             text-decoration: none;
@@ -40,23 +40,17 @@
         .badge-custom {
             display: block;
             background-color: transparent;
-            color:  #697a8d;
-            border:  #697a8d;
+            color: #697a8d;
+            border: #697a8d;
             border-radius: 12px;
             padding: .25rem .5rem;
             font-size: .85rem;
             margin-bottom: .25rem;
-            font-weight: 700;
+            font-weight: 500;
             width: max-content;
             max-width: 100%;
             margin-top: .25rem;
             cursor: pointer;
-        }
-
-        .badge-custom::before {
-            content: '✔ ';
-            color: #697a8d;
-            margin-right: .2rem;
         }
 
         /* Interest buttons */
@@ -113,7 +107,7 @@
             font-size: 0.9rem;
             font-family: 'Segoe UI', Arial, sans-serif;
             color: #555;
-            padding: 0.75rem 1rem;
+            padding: 0.25rem 0.5rem;
             text-transform: uppercase;
             border-right: 1px solid #ddd;
         }
@@ -124,7 +118,7 @@
 
         .table td {
             vertical-align: middle;
-            padding: 0.75rem 1rem;
+            padding: 0.25rem 0.5rem;
             border-right: 1px solid #ddd;
         }
 
@@ -237,60 +231,57 @@
 <body>
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
-             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
-        <div class="app-brand demo">
-          <a href="#" class="app-brand-link">
-            <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
-            <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
-          </a>
-          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-            <i class="bx bx-chevron-left bx-sm align-middle"></i>
-          </a>
-        </div>
-        <div class="menu-inner-shadow"></div>
-        <ul class="menu-inner py-1">
-          <li class="menu-item"><a href="index.html" class="menu-link"><i
-                class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
-          <li class="menu-item active open ">
-            <a href="javascript:void(0);" class="menu-link menu-toggle active">
-              <i class="menu-icon tf-icons bx bx-cog"></i>
-              <div>System Admin</div>
-            </a>
-            <ul class="menu-sub ">
-              <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a></li>
-              <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
-              <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
-              <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
-            </ul>
-          </li>
-          <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons bx bx-task"></i>
-              <div>Project</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item"><a href="Manage-Project.html" class="menu-link">Project Management</a>
-              </li>
-              <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project Activities</a></li>
-
-            </ul>
-          </li>
-         <li class="menu-item"><a href="project.html" class="menu-link"><i
-                class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
-          <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i
-             class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
-             <li class="menu-item active open">
-            <a href="javascript:void(0);" class="menu-link menu-toggle active">
-              <i class="menu-icon tf-icons bx bx-task"></i>
-              <div>Recruitment</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item"><a href="Job-Position.html" class="menu-link">Job Position</a>
-              </li>
-              <li class="menu-item active"><a href="Candidate.html" class="menu-link">Candidates</a></li>
-        </ul>
-        </li>
-      </aside>
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo">
+                    <a href="#" class="app-brand-link">
+                        <img src="https://Sitesoch.com/assets/svg/Sitesoch.svg" width="20">
+                        <p style="font-size: 18px; font-weight: 500; margin-top: 20px;">Sitesoch</p>
+                    </a>
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                <div class="menu-inner-shadow"></div>
+                <ul class="menu-inner py-1">
+                    <li class="menu-item"><a href="index.html" class="menu-link"><i class="menu-icon tf-icons bx bx-home-circle"></i>Dashboard</a></li>
+                    <li class="menu-item active open ">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons bx bx-cog"></i>
+                            <div>System Admin</div>
+                        </a>
+                        <ul class="menu-sub ">
+                            <li class="menu-item"><a href="Organization-Master.html" class="menu-link">Organization Master</a></li>
+                            <li class="menu-item"><a href="Skill-Master.html" class="menu-link">Skills Master</a></li>
+                            <li class="menu-item"><a href="User-Master.html" class="menu-link">User Master</a></li>
+                            <li class="menu-item"><a href="Role-Master.html" class="menu-link">Role Master</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item active open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div>Project</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Manage-Project.html" class="menu-link">Project Management</a>
+                            </li>
+                            <li class="menu-item"><a href="Manage-Project2.html" class="menu-link">Project Activities</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="project.html" class="menu-link"><i class="menu-icon tf-icons bx bx-calendar"></i>Time Sheet</a></li>
+                    <li class="menu-item"><a href="Leave-Dashboard.html" class="menu-link"><i class="menu-icon tf-icons bx bx-detail"></i>Leave Dashboard</a></li>
+                    <li class="menu-item active open">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle active">
+                            <i class="menu-icon tf-icons bx bx-task"></i>
+                            <div>Recruitment</div>
+                        </a>
+                        <ul class="menu-sub">
+                            <li class="menu-item"><a href="Job-Position.html" class="menu-link">Job Position</a>
+                            </li>
+                            <li class="menu-item active"><a href="Candidate.html" class="menu-link">Candidates</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
             <div class="layout-page">
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -412,13 +403,17 @@
                             </div>
                         </div>
                         <div class="candidates-card mt-3">
-                            <div class="card-header border-bottom">
-  <div class="row">
-    <h5 class="card-title col-md-12">Candidate</h5>
-  </div>
-  <hr class="my-3" style="margin-left:-2rem; margin-right:-2rem;" />
-</div>
-
+                            <div class="row">
+                  <h5 class="card-title col-md-9">Candidate</h5>
+                  
+                  <div class="dt-buttons col-md-3 btn-group flex-wrap"><a class="btn add-new btn-primary"
+                      href="Add-Candidate.html" type="button"><span><i
+                          class="icon-base bx bx-plus icon-sm me-0 me-sm-2"></i><span
+                          class="d-none d-sm-inline-block">Add
+                          Candidate</span></span></a> </div>
+                </div>
+                   <hr class="my-3" style="margin-left: -1.25rem; margin-right:-1.25rem;"/>
+                
                             <div class="container-fluid p-0">
                                 <table class="table table-bordered table-hover table-striped align-middle mb-0">
                                     <thead>
@@ -437,18 +432,17 @@
                                             <td></td>
                                             <td><a href="#" class="candidate-name">AJAY WATPADE</a></td>
                                             <td>
-                                                <span class="badge-custom">SQL</span>
-                                                <span class="badge-custom">Software development</span>
-                                                <span class="badge-custom">HTML</span>
+                                                <span class="badge-custom">SQL, Software development, HTML</span>
+                                            
                                             </td>
                                             <td>
-                                                <strong>Applied over 3 months ago</strong><br>
+                                                Applied over 3 months ago<br>
                                                 <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
                                             </td>
                                             <td class="actions-cell">
                                                 <div class="dropdown">
                                                     <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
-                                                        <i class="bx bx-dots-horizontal-rounded fs-4"></i>
+                                                        <i class="bx bx-dots-vertical-rounded fs-4"></i>
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end">
                                                         <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i> View Profile</a></li>
@@ -462,18 +456,17 @@
                                             <td></td>
                                             <td><a href="#" class="candidate-name">NILAM SURVE</a></td>
                                             <td>
-                                                <span class="badge-custom">SQL</span>
-                                                <span class="badge-custom">Web development</span>
-                                                <span class="badge-custom">Laravel</span>
+                                                <span class="badge-custom">SQL, Web development, Laravel</span>
+                                                
                                             </td>
                                             <td>
-                                                <strong>Applied over 3 months ago</strong><br>
+                                                Applied over 3 months ago<br>
                                                 <small class="text-muted">Bulk actions are disabled for candidates in this time frame</small>
                                             </td>
                                             <td class="actions-cell">
                                                 <div class="dropdown">
                                                     <button class="btn p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More">
-                                                        <i class="bx bx-dots-horizontal-rounded fs-4"></i>
+                                                        <i class="bx bx-dots-vertical-rounded fs-4"></i>
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end">
                                                         <li><a class="dropdown-item" href="#"><i class="bx bx-user me-2"></i> View Profile</a></li>
@@ -485,9 +478,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>
-                            <div class="add-candidate-btn-container">
-                                <a class="btn add-new btn-primary" href="Add-Candidate.html" type="button"><span><i class="icon-base bx bx-plus icon-sm me-0 me-sm-2"></i><span class="d-none d-sm-inline-block">Add Candidate</span></span></a>
                             </div>
                         </div>
                     </div>
